@@ -1,11 +1,16 @@
-#+Title:  CRDTs
+# Local variables:
+# after-save-hook: org-reveal-export-to-html-and-browse
+# org-reveal-title-slide: "<h1>%t</h1>"
+# end:
+
+#+Title:  Rapid prototype development with CRDTs
 #+Author: Chrislain Razafimahefa
 #+Email: razafima@gmail.com
 
-#+REVEAL_ROOT: file:///Users/chrislain/workspace/OTHER/libraries/reveal.js
+#+REVEAL_ROOT: file:./reveal.js
 #+REVEAL_TRANS: none
 #+REVEAL_PLUGINS: (notes)
-#+REVEAL_THEME: white
+
 #+REVEAL_HLEVEL: 999
 #+REVEAL_HEAD_PREAMBLE: <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 #+REVEAL_PREAMBLE: <div id="hidden" style="display:none;"> <div id="header"> <div id="header-left"></div> <div id="header-right"></div> <div id="footer-left"><img src="/Users/chrislain/workspace/teaching/assets/images/digicomp_logo.png" height="50" width="250"></div> </div>   </div>
