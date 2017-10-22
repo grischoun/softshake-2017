@@ -1,0 +1,24 @@
+#+Title:  CRDTs
+#+Author: Chrislain Razafimahefa
+#+Email: razafima@gmail.com
+
+#+REVEAL_ROOT: file:///Users/chrislain/workspace/OTHER/libraries/reveal.js
+#+REVEAL_TRANS: none
+#+REVEAL_PLUGINS: (notes)
+#+REVEAL_THEME: white
+#+REVEAL_HLEVEL: 999
+#+REVEAL_HEAD_PREAMBLE: <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+#+REVEAL_PREAMBLE: <div id="hidden" style="display:none;"> <div id="header"> <div id="header-left"></div> <div id="header-right"></div> <div id="footer-left"><img src="/Users/chrislain/workspace/teaching/assets/images/digicomp_logo.png" height="50" width="250"></div> </div>   </div>
+
+
+
+#+OPTIONS: toc:1
+#+OPTIONS: num:nil
+#+OPTIONS: reveal_center:nil
+#+OPTIONS: reveal_title_slide:auto
+#+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
+
+
+* CRDTs
+
+** Hello

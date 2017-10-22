@@ -1,0 +1,12 @@
+Rapid prototype development with CRDTs
+
+
+Wouldn't it be interesting to build rapid prototypes of distributed applications, including WEB and mobile applications, without the hassle of implementing the same glue server code (REST API) over and over again? With the help of CRDTs, you can.
+
+In distributed systems, concurrent writes on a replicated state can lead to conflicts, which in general cannot be solved automatically. CRDTs (conflict-free replicated data types) are data structures allowing optimistic and concurrent writes and promising that eventually all replicas will end up in the same state.
+
+The presentation will introduce CRDTs as well as REPLIKATIV, a framework written in Clojure for exploiting CRDTs.
+
+By providing a distributed database based on CRDTs, REPLIKATIV aims at making it much simpler to develop your distributed application, including web and mobile applications.
+
+Among many benefits, you spend less time on the server side, you get high scalability and your users can work offline with an always available system.
