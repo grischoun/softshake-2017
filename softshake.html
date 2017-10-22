@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Angular - JS - Avancé - Partie 2</title>
+<title>Rapid prototype development with CRDTs</title>
 <meta name="author" content="(Chrislain Razafimahefa)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="file:///Users/chrislain/workspace/OTHER/libraries/reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="file:./reveal.js/css/reveal.css"/>
 
-<link rel="stylesheet" href="file:///Users/chrislain/workspace/OTHER/libraries/reveal.js/css/theme/white.css" id="theme"/>
+<link rel="stylesheet" href="file:./reveal.js/css/theme/moon.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -18,7 +18,7 @@
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'file:///Users/chrislain/workspace/OTHER/libraries/reveal.js/css/print/pdf.css';
+        link.href = 'file:./reveal.js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
@@ -28,14 +28,17 @@
 <div id="hidden" style="display:none;"> <div id="header"> <div id="header-left"></div> <div id="header-right"></div> <div id="footer-left"><img src="/Users/chrislain/workspace/teaching/assets/images/digicomp_logo.png" height="50" width="250"></div> </div>   </div>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Angular - JS - Avancé - Partie 2</h1><h2 class="author">Chrislain Razafimahefa</h2><p class="date">Created: 2017-10-19 Thu 14:47</p>
+<section id="sec-title-slide"><h1>Rapid prototype development with CRDTs</h1>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org290cab7">CRDTs</a></li>
+<li><a href="#/slide-org991e01b">About me</a></li>
+<li><a href="#/slide-org58a12f3">Distributed Systems</a></li>
+<li><a href="#/slide-orga1a82f5">Replication</a></li>
+<li><a href="#/slide-org468bdc0">CRDTs</a></li>
 </ul>
 </div>
 </div>
@@ -43,20 +46,50 @@
 
 
 <section>
-<section id="slide-org290cab7">
-<h2 id="org290cab7">CRDTs</h2>
-<div class="outline-text-2" id="text-org290cab7">
-</div></section>
+<section id="slide-org991e01b">
+<h2 id="org991e01b">About me</h2>
+<div class="outline-text-2" id="text-org991e01b">
+</div><ul class="org-ul"><li><a id="orgbe89d9d"></a>Chrislain Razafimahefa<br  /><p>
+Founder of <i>Shared Object Sarl</i>
+</p></li>
+
+<li><a id="orga9c76c0"></a>Past Adventures<br  /><ul class="org-ul"><li><a id="orgd42661a"></a>Java<br  /><p>
+Compiler and VM implementation, J2EE Applications
+</p></li>
+
+<li><a id="org8dc745f"></a>Rails<br  /></li>
+<li><a id="org4101346"></a>Clojure(Script)<br  /></li></ul></li></ul>
+</section>
 </section>
 <section>
-<section id="slide-org896ba93">
-<h3 id="org896ba93">Hello</h3>
+<section id="slide-org58a12f3">
+<h2 id="org58a12f3">Distributed Systems</h2>
+<p>
+~ Multiple Machines Used For One Purpose
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orga1a82f5">
+<h2 id="orga1a82f5">Replication</h2>
+<div class="outline-text-2" id="text-orga1a82f5">
+</div><ul class="org-ul"><li><a id="orgee863b3"></a>Goal:<br  /><p>
+Have the same data on all replicas
+</p></li>
+<li><a id="org68eb2b8"></a>Why?<br  /><p>
+<b><b>*</b></b>
+</p></li></ul>
+</section>
+</section>
+<section>
+<section id="slide-org468bdc0">
+<h2 id="org468bdc0">CRDTs</h2>
 </section>
 </section>
 </div>
 </div>
-<script src="file:///Users/chrislain/workspace/OTHER/libraries/reveal.js/lib/js/head.min.js"></script>
-<script src="file:///Users/chrislain/workspace/OTHER/libraries/reveal.js/js/reveal.js"></script>
+<script src="file:./reveal.js/lib/js/head.min.js"></script>
+<script src="file:./reveal.js/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
@@ -83,7 +116,7 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: 'file:///Users/chrislain/workspace/OTHER/libraries/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+ { src: 'file:./reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
 });
 </script>
 </body>

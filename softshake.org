@@ -20,10 +20,26 @@
 #+OPTIONS: toc:1
 #+OPTIONS: num:nil
 #+OPTIONS: reveal_center:nil
-#+OPTIONS: reveal_title_slide:auto
+
 #+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
 
 
-* CRDTs
+* About me
 
-** Hello
+**** Chrislain Razafimahefa
+   Founder of /Shared Object Sarl/
+
+**** Past Adventures
+***** Java
+   Compiler and VM implementation, J2EE Applications
+
+***** Rails
+***** Clojure(Script)
+* Distributed Systems
+~ Multiple Machines Used For One Purpose
+* Replication
+**** Goal:
+Have the same data on all replicas
+**** Why?
+*****
+* CRDTs
