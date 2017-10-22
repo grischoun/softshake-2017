@@ -1,9 +1,9 @@
 # Local variables:
 # after-save-hook: org-reveal-export-to-html-and-browse
-# org-reveal-title-slide: "<h1>%t</h1>"
+# org-reveal-title-slide: "<h1>%t</h1> <br> <h3>%a</h3>%e"
 # end:
 
-#+Title:  Rapid prototype development with CRDTs
+#+Title:  Rapid prototyping with CRDTs
 #+Author: Chrislain Razafimahefa
 #+Email: razafima@gmail.com
 
@@ -17,29 +17,84 @@
 
 
 
-#+OPTIONS: toc:1
+#+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 #+OPTIONS: reveal_center:nil
 
 #+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
 
 
+* COMMENT TODO: TOC should appear after 'About me'
+
 * About me
 
-**** Chrislain Razafimahefa
-   Founder of /Shared Object Sarl/
+**** Founder of */Shared Object Sarl/*
 
 **** Past Adventures
 ***** Java
-   Compiler and VM implementation, J2EE Applications
+****** Compiler and VM implementation, J2EE Applications
 
 ***** Rails
 ***** Clojure(Script)
+
+* Motivation
+
+**** COMMENT SAY: if there is anything that you can get out of this talk then remember this:
+***** Soon it is going to be possible to build applications with the following properties....
+**** COMMENT RELIRE: l'intro sur le site de REPLIKATIV pour avoir des idées
+
+****  ????? Comment développer rapidement des applications distribuées (pour le moment des prototypes) avec de jolies propriétés comme:
+- liveness
+- ne pas passer trop de temps sur le côté serveur
+- peer-to-peer
+- travailler offline
+- automatic conflict resolution
+- ....
 * Distributed Systems
-~ Multiple Machines Used For One Purpose
+My definition: ~ Multiple Machines Used For One Purpose
+
+Has taken so much importance today: big data, blockchain, etc...
 * Replication
-**** Goal:
+**** Goal
 Have the same data on all replicas
-**** Why?
-*****
+**** Why
+***** Increase *Availability*
+- Safer systems
+***** Reduce *Latency*
+- Faster systems
+***** Increase *Throughput*
+- By increasing the number of available nodes
+- Scalabale systems
+***** Work *Offline*
+* Challenges with Replication
+***** 2 types of replication
+****** Single writer
+****** Multiple Writer
+***** As with any distributed systems, challenge is: partial failure
 * CRDTs
+*Conflict-free Replicated Data Type*
+
+A Solution to the Challenges in Replication
+** The Idea
+**** On est dans un contexte de multiple writers
+**** Quelle est l'idée...
+- ? Quelque soit l'ordre des écritures par les différents acteurs
+- Quelque soit les partial failures
+=>  *Eventually* all replicas will converge
+* Available CRDTs
+**** Counter
+**** Map
+**** Set
+**** Ordered Set
+**** ...
+* ? JSON CRDTs
+* REPLIKATIV
+* My Contribution
+* Demo / Illustration throught the Chat app
+* Usage in Industry
+**** Json crdts in JS by Kleppmann & co
+**** Riak, Soundcloud, ...
+* Advantages of all this
+**** Less time on server side
+**** ...
+* Conclusion
