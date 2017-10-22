@@ -75,12 +75,24 @@ Have the same data on all replicas
 *Conflict-free Replicated Data Type*
 
 A Solution to the Challenges in Replication
-** The Idea
+
+* The Idea
 **** On est dans un contexte de multiple writers
 **** Quelle est l'idée...
 - ? Quelque soit l'ordre des écritures par les différents acteurs
 - Quelque soit les partial failures
 =>  *Eventually* all replicas will converge
+
+* How it works
+
+**** State based CRDTs
+
+***** Commutative
+***** Associative
+***** Indempotent
+
+**** Operation based CRDTs
+
 * Available CRDTs
 **** Counter
 **** Map
