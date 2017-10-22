@@ -51,9 +51,12 @@
 - automatic conflict resolution
 - ....
 * Distributed Systems
-My definition: ~ Multiple Machines Used For One Purpose
+~ Multiple Machines Used For One Purpose
 
-Has taken so much importance today: big data, blockchain, etc...
+#+BEGIN_NOTES
+Has taken so much importance today:
+- big data, blockchain, etc...
+#+END_NOTES
 * Replication
 **** Goal
 Have the same data on all replicas
@@ -70,36 +73,46 @@ Have the same data on all replicas
 ***** 2 types of replication
 ****** Single writer
 ****** Multiple Writer
-***** As with any distributed systems, challenge is: partial failure
+- CONFLICTS
+
+***** Other issues: partial failure
 * CRDTs
 *Conflict-free Replicated Data Type*
 
-A Solution to the Challenges in Replication
+Data Structures as a Solution to the Challenges in Replication
 
-* The Idea
+** The Idea
 **** On est dans un contexte de multiple writers
 **** Quelle est l'idée...
 - ? Quelque soit l'ordre des écritures par les différents acteurs
 - Quelque soit les partial failures
 =>  *Eventually* all replicas will converge
 
-* How it works
+** How it works
 
-**** State based CRDTs
+**** Two Types
+***** State based
 
-***** Commutative
-***** Associative
-***** Indempotent
+States are exchanged between nodes
 
-**** Operation based CRDTs
+****** Commutative
+****** Associative
+****** Indempotent
 
-* Available CRDTs
+
+***** Operation based
+
+Operations are exchanged between nodes
+
+****** Commutative
+
+** Available CRDTs
 **** Counter
 **** Map
 **** Set
 **** Ordered Set
 **** ...
-* ? JSON CRDTs
+** ? JSON CRDTs
 * REPLIKATIV
 * My Contribution
 * Demo / Illustration throught the Chat app

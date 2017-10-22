@@ -33,23 +33,23 @@
 
 
 <section>
-<section id="slide-org747fd35">
-<h2 id="org747fd35">About me</h2>
-<div class="outline-text-2" id="text-org747fd35">
-</div><ul class="org-ul"><li><a id="org7b7a61d"></a>Founder of <b><i>Shared Object Sarl</i></b><br  /></li>
+<section id="slide-org45f2119">
+<h2 id="org45f2119">About me</h2>
+<div class="outline-text-2" id="text-org45f2119">
+</div><ul class="org-ul"><li><a id="orgbe8d4fa"></a>Founder of <b><i>Shared Object Sarl</i></b><br  /></li>
 
-<li><a id="orgfd6fbee"></a>Past Adventures<br  /><ul class="org-ul"><li><a id="org38610d2"></a>Java<br  /><ul class="org-ul"><li><a id="org336f484"></a>Compiler and VM implementation, J2EE Applications<br  /></li></ul></li>
+<li><a id="orgdceaee0"></a>Past Adventures<br  /><ul class="org-ul"><li><a id="org75f11e1"></a>Java<br  /><ul class="org-ul"><li><a id="org9b0c285"></a>Compiler and VM implementation, J2EE Applications<br  /></li></ul></li>
 
-<li><a id="org8d1007d"></a>Rails<br  /></li>
-<li><a id="org8da6f8f"></a>Clojure(Script)<br  /></li></ul></li></ul>
+<li><a id="org2b8bdc0"></a>Rails<br  /></li>
+<li><a id="org084f2ce"></a>Clojure(Script)<br  /></li></ul></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgaacab97">
-<h2 id="orgaacab97">Motivation</h2>
-<div class="outline-text-2" id="text-orgaacab97">
-</div><ul class="org-ul"><li><a id="org2f699de"></a>????? Comment développer rapidement des applications distribuées (pour le moment des prototypes) avec de jolies propriétés comme:<br  /><ul>
+<section id="slide-org192a38d">
+<h2 id="org192a38d">Motivation</h2>
+<div class="outline-text-2" id="text-org192a38d">
+</div><ul class="org-ul"><li><a id="org69c3d4f"></a>????? Comment développer rapidement des applications distribuées (pour le moment des prototypes) avec de jolies propriétés comme:<br  /><ul>
 <li>liveness</li>
 <li>ne pas passer trop de temps sur le côté serveur</li>
 <li>peer-to-peer</li>
@@ -61,67 +61,79 @@
 </section>
 </section>
 <section>
-<section id="slide-orgeb14a53">
-<h2 id="orgeb14a53">Distributed Systems</h2>
+<section id="slide-orga609fee">
+<h2 id="orga609fee">Distributed Systems</h2>
 <p>
-My definition: ~ Multiple Machines Used For One Purpose
+~ Multiple Machines Used For One Purpose
 </p>
 
+<aside class="notes">
 <p>
-Has taken so much importance today: big data, blockchain, etc&#x2026;
+Has taken so much importance today:
 </p>
+<ul>
+<li>big data, blockchain, etc&#x2026;</li>
+
+</ul>
+
+</aside>
 </section>
 </section>
 <section>
-<section id="slide-orgc250ae5">
-<h2 id="orgc250ae5">Replication</h2>
-<div class="outline-text-2" id="text-orgc250ae5">
-</div><ul class="org-ul"><li><a id="org79fe240"></a>Goal<br  /><p>
+<section id="slide-org3f13afb">
+<h2 id="org3f13afb">Replication</h2>
+<div class="outline-text-2" id="text-org3f13afb">
+</div><ul class="org-ul"><li><a id="orgabe743d"></a>Goal<br  /><p>
 Have the same data on all replicas
 </p></li>
-<li><a id="org498fba2"></a>Why<br  /><ul class="org-ul"><li><a id="orgf093eb1"></a>Increase <b>Availability</b><br  /><ul>
+<li><a id="orge78e843"></a>Why<br  /><ul class="org-ul"><li><a id="org6a1a116"></a>Increase <b>Availability</b><br  /><ul>
 <li>Safer systems</li>
 
 </ul></li>
-<li><a id="org087901a"></a>Reduce <b>Latency</b><br  /><ul>
+<li><a id="org81a7ccc"></a>Reduce <b>Latency</b><br  /><ul>
 <li>Faster systems</li>
 
 </ul></li>
-<li><a id="org9e50941"></a>Increase <b>Throughput</b><br  /><ul>
+<li><a id="orgbc5f63b"></a>Increase <b>Throughput</b><br  /><ul>
 <li>By increasing the number of available nodes</li>
 <li>Scalabale systems</li>
 
 </ul></li>
-<li><a id="org10def68"></a>Work <b>Offline</b><br  /></li></ul></li></ul>
+<li><a id="org5f03f39"></a>Work <b>Offline</b><br  /></li></ul></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-org7bfd86b">
-<h2 id="org7bfd86b">Challenges with Replication</h2>
-<div class="outline-text-2" id="text-org7bfd86b">
-</div><ul class="org-ul"><li><a id="orga7f835f"></a>2 types of replication<br  /><ul class="org-ul"><li><a id="orgf1c192e"></a>Single writer<br  /></li>
-<li><a id="org295bd93"></a>Multiple Writer<br  /></li></ul></li>
-<li><a id="org7591e29"></a>As with any distributed systems, challenge is: partial failure<br  /></li></ul>
+<section id="slide-org7d96047">
+<h2 id="org7d96047">Challenges with Replication</h2>
+<div class="outline-text-2" id="text-org7d96047">
+</div><ul class="org-ul"><li><a id="org91ccc19"></a>2 types of replication<br  /><ul class="org-ul"><li><a id="org063dfae"></a>Single writer<br  /></li>
+<li><a id="orge7ee10a"></a>Multiple Writer<br  /><ul>
+<li>CONFLICTS</li>
+
+</ul></li></ul></li>
+
+<li><a id="org6f5dfa3"></a>Other issues: partial failure<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-org546d3b8">
-<h2 id="org546d3b8">CRDTs</h2>
+<section id="slide-orga9a49e9">
+<h2 id="orga9a49e9">CRDTs</h2>
 <p>
 <b>Conflict-free Replicated Data Type</b>
 </p>
 
 <p>
-A Solution to the Challenges in Replication
+Data Structures as a Solution to the Challenges in Replication
 </p>
+
 </section>
 </section>
 <section>
-<section id="slide-orgfc6e5f4">
-<h3 id="orgfc6e5f4">The Idea</h3>
-<div class="outline-text-3" id="text-orgfc6e5f4">
-</div><ul class="org-ul"><li><a id="orgf58e104"></a>On est dans un contexte de multiple writers<br  /></li>
-<li><a id="orge22fb50"></a>Quelle est l'idée&#x2026;<br  /><ul>
+<section id="slide-orge00470b">
+<h3 id="orge00470b">The Idea</h3>
+<div class="outline-text-3" id="text-orge00470b">
+</div><ul class="org-ul"><li><a id="orga7fbf17"></a>On est dans un contexte de multiple writers<br  /></li>
+<li><a id="org880b5c7"></a>Quelle est l'idée&#x2026;<br  /><ul>
 <li>? Quelque soit l'ordre des écritures par les différents acteurs</li>
 <li>Quelque soit les partial failures</li>
 
@@ -129,58 +141,80 @@ A Solution to the Challenges in Replication
 <p>
 =&gt;  <b>Eventually</b> all replicas will converge
 </p></li></ul>
+
 </section>
 </section>
 <section>
-<section id="slide-org2040f7e">
-<h2 id="org2040f7e">Available CRDTs</h2>
-<div class="outline-text-2" id="text-org2040f7e">
-</div><ul class="org-ul"><li><a id="org0ac4445"></a>Counter<br  /></li>
-<li><a id="org1845bf6"></a>Map<br  /></li>
-<li><a id="org7bfa6d3"></a>Set<br  /></li>
-<li><a id="orgd8e1e29"></a>Ordered Set<br  /></li>
-<li><a id="org898eaa2"></a>&#x2026;<br  /></li></ul>
+<section id="slide-orgdde875b">
+<h3 id="orgdde875b">How it works</h3>
+<div class="outline-text-3" id="text-orgdde875b">
+</div><ul class="org-ul"><li><a id="orgedb344d"></a>Two Types<br  /><ul class="org-ul"><li><a id="orged6cbd0"></a>State based<br  /><p>
+States are exchanged between nodes
+</p>
+
+<ul class="org-ul"><li><a id="orgf40c132"></a>Commutative<br  /></li>
+<li><a id="orgfbcac05"></a>Associative<br  /></li>
+<li><a id="org43d2bee"></a>Indempotent<br  /></li></ul></li>
+
+
+<li><a id="orgfe53c44"></a>Operation based<br  /><p>
+Operations are exchanged between nodes
+</p>
+
+<ul class="org-ul"><li><a id="org8e48c31"></a>Commutative<br  /></li></ul></li></ul></li></ul>
+
 </section>
 </section>
 <section>
-<section id="slide-org7964f3f">
-<h2 id="org7964f3f">? JSON CRDTs</h2>
+<section id="slide-org20d3e43">
+<h3 id="org20d3e43">Available CRDTs</h3>
+<div class="outline-text-3" id="text-org20d3e43">
+</div><ul class="org-ul"><li><a id="org0a843bd"></a>Counter<br  /></li>
+<li><a id="org4983731"></a>Map<br  /></li>
+<li><a id="org0531782"></a>Set<br  /></li>
+<li><a id="orgec418c5"></a>Ordered Set<br  /></li>
+<li><a id="org629bd6e"></a>&#x2026;<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-org2e78e5b">
-<h2 id="org2e78e5b">REPLIKATIV</h2>
+<section id="slide-org526c036">
+<h3 id="org526c036">? JSON CRDTs</h3>
 </section>
 </section>
 <section>
-<section id="slide-org4ed3d5e">
-<h2 id="org4ed3d5e">My Contribution</h2>
+<section id="slide-org8b9d89f">
+<h2 id="org8b9d89f">REPLIKATIV</h2>
 </section>
 </section>
 <section>
-<section id="slide-org9a6bc88">
-<h2 id="org9a6bc88">Demo / Illustration throught the Chat app</h2>
+<section id="slide-org0cfe544">
+<h2 id="org0cfe544">My Contribution</h2>
 </section>
 </section>
 <section>
-<section id="slide-org22fa3bd">
-<h2 id="org22fa3bd">Usage in Industry</h2>
-<div class="outline-text-2" id="text-org22fa3bd">
-</div><ul class="org-ul"><li><a id="org5cce56b"></a>Json crdts in JS by Kleppmann &amp; co<br  /></li>
-<li><a id="orgdb2fcb2"></a>Riak, Soundcloud, &#x2026;<br  /></li></ul>
+<section id="slide-org2f945a7">
+<h2 id="org2f945a7">Demo / Illustration throught the Chat app</h2>
 </section>
 </section>
 <section>
-<section id="slide-org01843e2">
-<h2 id="org01843e2">Advantages of all this</h2>
-<div class="outline-text-2" id="text-org01843e2">
-</div><ul class="org-ul"><li><a id="orgf78492e"></a>Less time on server side<br  /></li>
-<li><a id="org3417cc1"></a>&#x2026;<br  /></li></ul>
+<section id="slide-org73675c7">
+<h2 id="org73675c7">Usage in Industry</h2>
+<div class="outline-text-2" id="text-org73675c7">
+</div><ul class="org-ul"><li><a id="orga79ba88"></a>Json crdts in JS by Kleppmann &amp; co<br  /></li>
+<li><a id="orgf5188cc"></a>Riak, Soundcloud, &#x2026;<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-org4e4ce97">
-<h2 id="org4e4ce97">Conclusion</h2>
+<section id="slide-orgaf8042d">
+<h2 id="orgaf8042d">Advantages of all this</h2>
+<div class="outline-text-2" id="text-orgaf8042d">
+</div><ul class="org-ul"><li><a id="org156f8fb"></a>Less time on server side<br  /></li>
+<li><a id="org2efbffb"></a>&#x2026;<br  /></li></ul>
+</section>
+</section>
+<section>
+<section id="slide-org919aaae">
+<h2 id="org919aaae">Conclusion</h2>
 </section>
 </section>
 </div>
