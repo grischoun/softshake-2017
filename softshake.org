@@ -40,7 +40,7 @@
 HANDS UP: CRDTs, Clojure, CAP
 #+END_NOTES
 
-* Motivation
+* TODO Motivation
 
 **** COMMENT SAY: if there is anything that you can get out of this talk then remember this:
 ***** Soon it is going to be possible to build applications with the following properties....
@@ -56,10 +56,12 @@ HANDS UP: CRDTs, Clojure, CAP
 * Distributed Systems
 ~ Multiple Machines Used For One Purpose
 
-#+BEGIN_NOTES
-Has taken so much importance today:
-- big data, blockchain, etc...
-#+END_NOTES
+[[./img/distributed.png]]
+
+   #+BEGIN_NOTES
+   Has taken so much importance today:
+   - big data, blockchain, etc...
+   #+END_NOTES
 * Replication
 **** Goal
 Have the same data on all replicas
@@ -102,9 +104,7 @@ Thanks to mathematical properties => All replicas will *eventually* converge
  - ? Quelque soit l'ordre des écritures par les différents acteurs
  - Quelque soit les partial failures
  =>  *Eventually* all replicas will converge
-** How it works
-
-**** Two Types
+** Two types of CRDTs
 
 ***** Operation based
 
@@ -131,11 +131,16 @@ States are exchanged between nodes
 **** Ex.: COUNTER
 [[./img/op1.png]]
 
-***** Replicas execute local operations
+***** (5 - 4 - 3) = (5 - 3 - 4)
 
-***** Operations propagated to other replicas
 
-***** COMMUTATIVITY => (5 - 4 - 3) = (5 - 3 - 4)
+#+BEGIN_NOTES
+We have:
+Value , the global state replicated to all nodes
+Actions , i.e. operations applied to the values
+
+Operations are propagated to every replicas
+#+END_NOTES
 
 ** Operation based
 
@@ -153,7 +158,7 @@ States are exchanged between nodes
 **** Must have a semantic of delivering updates only once
 
 **** Must have causal order delivery
-** State based
+** TODO State based
 
 **** TODO show the 'integer + max' example from page 6 of Shapiro
 
@@ -176,6 +181,7 @@ States are exchanged between nodes
 **** Add a tag on each replica to uniquely identify set elements.
   [[./img/or-set.png]]
 
+**** COMMENT or-set favors 'add over 'remove
 ** Available CRDTs
 **** Counter
 **** Map
