@@ -1,6 +1,6 @@
 # Local variables:
 # after-save-hook: org-reveal-export-to-html-and-browse
-# org-reveal-title-slide: "<h1>%t</h1> <br> <h3>%a</h3>%e"
+# org-reveal-title-slide: "<h1>%t</h1> <br> <h3>%a</h3> <h5>Shared Object</h5> %e"
 # end:
 
 #+Title:  Rapid prototyping with CRDTs and REPLIKATIV
@@ -219,14 +219,29 @@ A more advanced data structure
 **** Ordered Set
 **** Graph
 **** ...
-** ? JSON CRDTs
-* REPLIKATIV
-* My Contribution
-* Demo / Illustration throught the Chat app
-* Usage in Industry
+** TODO JSON CRDTs
+**** Based on recent work by Kleppmann & co.
+**** TODO Add a picture of the paper
+**** TODO Add a picture of the main example used in the paper
+
+**   TODO Usage in Industry
 **** Json crdts in JS by Kleppmann & co
 **** Riak, Soundcloud, ...
-* Advantages of all this
-**** Less time on server side
-**** ...
+
+* REPLIKATIV
+**** TODO what is it?
+***** Develop distributed applications
+***** Based on replicated data types:  CRDTs
+***** Strong eventual consistency
+***** Can be seen as: distributed database
+** TODO Available CRDTs
+** TODO My Contribution
+** TODO It makes app dev. a lot simpler
+**** TODO Review of code that shows how fast it is to develop an app
+***** Advantages of all this
+******** Less time on server side
+******** ...
+* Demo / Illustration throught the Chat app
+
 * Conclusion
+* Questions?
