@@ -10,7 +10,6 @@
 #+REVEAL_ROOT: file:./reveal.js
 #+REVEAL_TRANS: none
 #+REVEAL_PLUGINS: (notes)
-
 #+REVEAL_HLEVEL: 999
 #+REVEAL_HEAD_PREAMBLE: <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 #+REVEAL_PREAMBLE: <div id="hidden" style="display:none;"> <div id="header"> <div id="header-left"></div> <div id="header-right"></div> <div id="footer-left"><img src="/Users/chrislain/workspace/teaching/assets/images/digicomp_logo.png" height="50" width="250"></div> </div>   </div>
@@ -20,6 +19,7 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 #+OPTIONS: reveal_center:nil
+#+OPTIONS: reveal_height:800
 
 #+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
 
@@ -79,7 +79,7 @@ Have the same data on all replicas
 If we choose to use asynchronous replication, then  => Conflicts
 
 
-**** How to deal with UPDATES?
+**** How to deal with concurrent UPDATES?
 ***** Synchronous / Synchronized
 ****** COMMENT Wait for a confirmation from other replicas before aknowledging the write to the local client
 ****** Strongly consistent
@@ -170,11 +170,12 @@ Operations are propagated to every replicas
 ** State based: Max example
 [[./img/max.png]]
 
-**** Local operation: 'set a value'
+**** Local operation: 'set'
 
 **** Merge operation: 'max'
 
-**** Convergence when merge function is:
+** State based: convergence
+**** Only when *merge* is:
 
 ***** Commutative: a + b = b + a
 
@@ -196,6 +197,7 @@ Operations are propagated to every replicas
 [[./img/op-set-naive-ok.png]]
 
 
+** Set
 ***** When Not lucky:
 [[./img/op-set-naive-notok.png]]
 
