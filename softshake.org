@@ -3,7 +3,7 @@
 # org-reveal-title-slide: "<h1>%t</h1> <br> <h3>%a</h3>%e"
 # end:
 
-#+Title:  Rapid prototyping with CRDTs
+#+Title:  Rapid prototyping with CRDTs and REPLIKATIV
 #+Author: Chrislain Razafimahefa
 #+Email: razafima@gmail.com
 
@@ -24,10 +24,7 @@
 #+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
 
 
-* COMMENT TODO: TOC should appear after 'About me'
-
 * About me
-
 **** Founder of */Shared Object Sarl/*
 
 **** Past Adventures
@@ -36,6 +33,12 @@
 
 ***** Rails
 ***** Clojure(Script)
+
+
+
+#+BEGIN_NOTES
+HANDS UP: CRDTs, Clojure, CAP
+#+END_NOTES
 
 * Motivation
 
@@ -70,41 +73,108 @@ Have the same data on all replicas
 - Scalabale systems
 ***** Work *Offline*
 * Challenges with Replication
-***** 2 types of replication
-****** Single writer
-****** Multiple Writer
-- CONFLICTS
+**** COMMENT As soon as there are updates problems arises. If we choose to synchronize the replication (i.e. wait for all the replicas to confirm that replication went well) it is going to be very slow.
+If we choose to use asynchronous replication, then  => Conflicts
 
-***** Other issues: partial failure
+
+**** How to deal with UPDATES?
+***** Synchronous / Synchronized
+****** COMMENT Wait for a confirmation from other replicas before aknowledging the write to the local client
+****** Strongly consistent
+****** Main issues: Slow and Does not scale
+***** Asynchronous
+****** COMMENT Apply all the updates locally and replicate asynchronously
+****** Fast and Scales
+****** Main Issue: CONFLICTS
+
+**** Is there a magical solution that would resolve conflicts automatically?
 * CRDTs
 *Conflict-free Replicated Data Type*
 
-Data Structures as a Solution to the Challenges in Replication
-
-** The Idea
-**** On est dans un contexte de multiple writers
-**** Quelle est l'idée...
-- ? Quelque soit l'ordre des écritures par les différents acteurs
-- Quelque soit les partial failures
-=>  *Eventually* all replicas will converge
-
+** Intuition
+**** Whatever the order of the operations, whether there are concurrent operations or not, *eventually* all replicas will converge
+**** Obtained by forcing operations on the data structures to have simple mathematical properties such as commutativity,...
+**** COMMENT OLD
+Thanks to mathematical properties => All replicas will *eventually* converge
+**** COMMENT OLD
+***** On est dans un contexte de multiple writers
+***** Quelle est l'idée...
+ - ? Quelque soit l'ordre des écritures par les différents acteurs
+ - Quelque soit les partial failures
+ =>  *Eventually* all replicas will converge
 ** How it works
 
 **** Two Types
+
+***** Operation based
+
+      Operations are exchanged between nodes
+
+****** COMMENT Commutative
+
+****** COMMENT Make sure operations are not duplicated
+
+
 ***** State based
 
 States are exchanged between nodes
 
-****** Commutative
-****** Associative
-****** Indempotent
+****** COMMENT Commutative
+****** COMMENT Associative
+******* COMMENT A merge may contain multiple updates so it has to be associative
+****** COMMENT Indempotent
 
 
-***** Operation based
 
-Operations are exchanged between nodes
+** Operation based
 
-****** Commutative
+**** Ex.: COUNTER
+[[./img/op1.png]]
+
+***** Replicas execute local operations
+
+***** Operations propagated to other replicas
+
+***** COMMUTATIVITY => (5 - 4 - 3) = (5 - 3 - 4)
+
+** Operation based
+
+
+**** If we add multiplication...
+[[./img/op2.png]]
+
+**** (5 - 4 - 3) * 2 - 1 != (5 - 3 - 4 - 1) * 2
+
+**** => COMMUTATIVITY is mandatory
+
+** COMMENT Issues in Operation based
+[[./img/op3.png]]
+
+**** Must have a semantic of delivering updates only once
+
+**** Must have causal order delivery
+** State based
+
+**** TODO show the 'integer + max' example from page 6 of Shapiro
+
+**** TODO On this example illustrate - the merge fct - commutativity - associativity - indempotence
+
+** More advanced data structure: Set
+
+**** Naive approach, i.e. like sequential version
+
+***** when lucky:
+[[./img/op-set-naive-ok.png]]
+
+
+***** Not lucky:
+[[./img/op-set-naive-notok.png]]
+
+
+** Observed-Remove Set
+
+**** Add a tag on each replica to uniquely identify set elements.
+  [[./img/or-set.png]]
 
 ** Available CRDTs
 **** Counter

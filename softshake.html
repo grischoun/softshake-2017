@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Rapid prototyping with CRDTs</title>
+<title>Rapid prototyping with CRDTs and REPLIKATIV</title>
 <meta name="author" content="(Chrislain Razafimahefa)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -28,28 +28,33 @@
 <div id="hidden" style="display:none;"> <div id="header"> <div id="header-left"></div> <div id="header-right"></div> <div id="footer-left"><img src="/Users/chrislain/workspace/teaching/assets/images/digicomp_logo.png" height="50" width="250"></div> </div>   </div>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1>Rapid prototyping with CRDTs</h1> <br> <h3>Chrislain Razafimahefa</h3> <br> <a href="mailto:razafima@gmail.com">razafima@gmail.com</a>
+<section id="sec-title-slide"><h1>Rapid prototyping with CRDTs and REPLIKATIV</h1> <br> <h3>Chrislain Razafimahefa</h3><a href="mailto:razafima@gmail.com">razafima@gmail.com</a>
 </section>
 
 
 <section>
-<section id="slide-org45f2119">
-<h2 id="org45f2119">About me</h2>
-<div class="outline-text-2" id="text-org45f2119">
-</div><ul class="org-ul"><li><a id="orgbe8d4fa"></a>Founder of <b><i>Shared Object Sarl</i></b><br  /></li>
+<section id="slide-org1467d92">
+<h2 id="org1467d92">About me</h2>
+<div class="outline-text-2" id="text-org1467d92">
+</div><ul class="org-ul"><li><a id="orgcc33c28"></a>Founder of <b><i>Shared Object Sarl</i></b><br  /></li>
 
-<li><a id="orgdceaee0"></a>Past Adventures<br  /><ul class="org-ul"><li><a id="org75f11e1"></a>Java<br  /><ul class="org-ul"><li><a id="org9b0c285"></a>Compiler and VM implementation, J2EE Applications<br  /></li></ul></li>
+<li><a id="org686b1ac"></a>Past Adventures<br  /><ul class="org-ul"><li><a id="org2bcfc40"></a>Java<br  /><ul class="org-ul"><li><a id="orgb299d0d"></a>Compiler and VM implementation, J2EE Applications<br  /></li></ul></li>
 
-<li><a id="org2b8bdc0"></a>Rails<br  /></li>
-<li><a id="org084f2ce"></a>Clojure(Script)<br  /></li></ul></li></ul>
+<li><a id="org9e1b7eb"></a>Rails<br  /></li>
+<li><a id="org990f1b8"></a>Clojure(Script)<br  /><aside class="notes">
+<p>
+HANDS UP: CRDTs, Clojure, CAP
+</p>
+
+</aside></li></ul></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org192a38d">
-<h2 id="org192a38d">Motivation</h2>
-<div class="outline-text-2" id="text-org192a38d">
-</div><ul class="org-ul"><li><a id="org69c3d4f"></a>????? Comment développer rapidement des applications distribuées (pour le moment des prototypes) avec de jolies propriétés comme:<br  /><ul>
+<section id="slide-org1003ea4">
+<h2 id="org1003ea4">Motivation</h2>
+<div class="outline-text-2" id="text-org1003ea4">
+</div><ul class="org-ul"><li><a id="org812490f"></a>????? Comment développer rapidement des applications distribuées (pour le moment des prototypes) avec de jolies propriétés comme:<br  /><ul>
 <li>liveness</li>
 <li>ne pas passer trop de temps sur le côté serveur</li>
 <li>peer-to-peer</li>
@@ -61,8 +66,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orga609fee">
-<h2 id="orga609fee">Distributed Systems</h2>
+<section id="slide-orgca0ab29">
+<h2 id="orgca0ab29">Distributed Systems</h2>
 <p>
 ~ Multiple Machines Used For One Purpose
 </p>
@@ -80,141 +85,192 @@ Has taken so much importance today:
 </section>
 </section>
 <section>
-<section id="slide-org3f13afb">
-<h2 id="org3f13afb">Replication</h2>
-<div class="outline-text-2" id="text-org3f13afb">
-</div><ul class="org-ul"><li><a id="orgabe743d"></a>Goal<br  /><p>
+<section id="slide-org6bd0620">
+<h2 id="org6bd0620">Replication</h2>
+<div class="outline-text-2" id="text-org6bd0620">
+</div><ul class="org-ul"><li><a id="orgc15e81e"></a>Goal<br  /><p>
 Have the same data on all replicas
 </p></li>
-<li><a id="orge78e843"></a>Why<br  /><ul class="org-ul"><li><a id="org6a1a116"></a>Increase <b>Availability</b><br  /><ul>
+<li><a id="orgce00afa"></a>Why<br  /><ul class="org-ul"><li><a id="org195a64b"></a>Increase <b>Availability</b><br  /><ul>
 <li>Safer systems</li>
 
 </ul></li>
-<li><a id="org81a7ccc"></a>Reduce <b>Latency</b><br  /><ul>
+<li><a id="orgf186ecf"></a>Reduce <b>Latency</b><br  /><ul>
 <li>Faster systems</li>
 
 </ul></li>
-<li><a id="orgbc5f63b"></a>Increase <b>Throughput</b><br  /><ul>
+<li><a id="orga16753a"></a>Increase <b>Throughput</b><br  /><ul>
 <li>By increasing the number of available nodes</li>
 <li>Scalabale systems</li>
 
 </ul></li>
-<li><a id="org5f03f39"></a>Work <b>Offline</b><br  /></li></ul></li></ul>
+<li><a id="org5b2464f"></a>Work <b>Offline</b><br  /></li></ul></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-org7d96047">
-<h2 id="org7d96047">Challenges with Replication</h2>
-<div class="outline-text-2" id="text-org7d96047">
-</div><ul class="org-ul"><li><a id="org91ccc19"></a>2 types of replication<br  /><ul class="org-ul"><li><a id="org063dfae"></a>Single writer<br  /></li>
-<li><a id="orge7ee10a"></a>Multiple Writer<br  /><ul>
-<li>CONFLICTS</li>
+<section id="slide-org840b4c1">
+<h2 id="org840b4c1">Challenges with Replication</h2>
+<div class="outline-text-2" id="text-org840b4c1">
+</div><ul class="org-ul"><li><a id="org57d8ade"></a>How to deal with UPDATES?<br  /><ul class="org-ul"><li><a id="org7708310"></a>Synchronous / Synchronized<br  /><ul class="org-ul"><li><a id="org441fad2"></a>Strongly consistent<br  /></li>
+<li><a id="org5f16020"></a>Main issues: Slow and Does not scale<br  /></li></ul></li>
+<li><a id="orgf8db1b8"></a>Asynchronous<br  /><ul class="org-ul"><li><a id="org577d9c6"></a>Fast and Scales<br  /></li>
+<li><a id="orgc0f4bf7"></a>Main Issue: CONFLICTS<br  /></li></ul></li></ul></li>
 
-</ul></li></ul></li>
-
-<li><a id="org6f5dfa3"></a>Other issues: partial failure<br  /></li></ul>
+<li><a id="orgfc502a9"></a>Is there a magical solution that would resolve conflicts automatically?<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-orga9a49e9">
-<h2 id="orga9a49e9">CRDTs</h2>
+<section id="slide-orgdb5889f">
+<h2 id="orgdb5889f">CRDTs</h2>
 <p>
 <b>Conflict-free Replicated Data Type</b>
 </p>
 
-<p>
-Data Structures as a Solution to the Challenges in Replication
-</p>
-
 </section>
 </section>
 <section>
-<section id="slide-orge00470b">
-<h3 id="orge00470b">The Idea</h3>
-<div class="outline-text-3" id="text-orge00470b">
-</div><ul class="org-ul"><li><a id="orga7fbf17"></a>On est dans un contexte de multiple writers<br  /></li>
-<li><a id="org880b5c7"></a>Quelle est l'idée&#x2026;<br  /><ul>
-<li>? Quelque soit l'ordre des écritures par les différents acteurs</li>
-<li>Quelque soit les partial failures</li>
-
-</ul>
-<p>
-=&gt;  <b>Eventually</b> all replicas will converge
-</p></li></ul>
-
+<section id="slide-orgb3c2fe0">
+<h3 id="orgb3c2fe0">Intuition</h3>
+<div class="outline-text-3" id="text-orgb3c2fe0">
+</div><ul class="org-ul"><li><a id="org0259ed6"></a>Whatever the order of the operations, whether there are concurrent operations or not, <b>eventually</b> all replicas will converge<br  /></li>
+<li><a id="org9709a02"></a>Obtained by forcing operations on the data structures to have simple mathematical properties such as commutativity,&#x2026;<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-orgdde875b">
-<h3 id="orgdde875b">How it works</h3>
-<div class="outline-text-3" id="text-orgdde875b">
-</div><ul class="org-ul"><li><a id="orgedb344d"></a>Two Types<br  /><ul class="org-ul"><li><a id="orged6cbd0"></a>State based<br  /><p>
-States are exchanged between nodes
-</p>
-
-<ul class="org-ul"><li><a id="orgf40c132"></a>Commutative<br  /></li>
-<li><a id="orgfbcac05"></a>Associative<br  /></li>
-<li><a id="org43d2bee"></a>Indempotent<br  /></li></ul></li>
-
-
-<li><a id="orgfe53c44"></a>Operation based<br  /><p>
+<section id="slide-org0e03668">
+<h3 id="org0e03668">How it works</h3>
+<div class="outline-text-3" id="text-org0e03668">
+</div><ul class="org-ul"><li><a id="orgc9ed687"></a>Two Types<br  /><ul class="org-ul"><li><a id="org2f8fe01"></a>Operation based<br  /><p>
 Operations are exchanged between nodes
+</p></li>
+
+<li><a id="org7dc191a"></a>State based<br  /><p>
+States are exchanged between nodes
+</p></li></ul></li></ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0dd4da2">
+<h3 id="org0dd4da2">Operation based</h3>
+<div class="outline-text-3" id="text-org0dd4da2">
+</div><ul class="org-ul"><li><a id="org1c13f24"></a>Ex.: COUNTER<br  /><div class="figure">
+<p><img src="./img/op1.png" alt="op1.png" />
 </p>
+</div>
 
-<ul class="org-ul"><li><a id="org8e48c31"></a>Commutative<br  /></li></ul></li></ul></li></ul>
+<ul class="org-ul"><li><a id="org7a6f0af"></a>Replicas execute local operations<br  /></li>
+
+<li><a id="orge6af87c"></a>Operations propagated to other replicas<br  /></li>
+
+<li><a id="org5328290"></a>COMMUTATIVITY =&gt; (5 - 4 - 3) = (5 - 3 - 4)<br  /></li></ul></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org20d3e43">
-<h3 id="org20d3e43">Available CRDTs</h3>
-<div class="outline-text-3" id="text-org20d3e43">
-</div><ul class="org-ul"><li><a id="org0a843bd"></a>Counter<br  /></li>
-<li><a id="org4983731"></a>Map<br  /></li>
-<li><a id="org0531782"></a>Set<br  /></li>
-<li><a id="orgec418c5"></a>Ordered Set<br  /></li>
-<li><a id="org629bd6e"></a>&#x2026;<br  /></li></ul>
+<section id="slide-orgb9c3716">
+<h3 id="orgb9c3716">Operation based</h3>
+<div class="outline-text-3" id="text-orgb9c3716">
+</div><ul class="org-ul"><li><a id="org53fc45b"></a>If we add multiplication&#x2026;<br  /><div class="figure">
+<p><img src="./img/op2.png" alt="op2.png" />
+</p>
+</div></li>
+
+<li><a id="orgb5d9af0"></a>(5 - 4 - 3) * 2 - 1 != (5 - 3 - 4 - 1) * 2<br  /></li>
+
+<li><a id="orgb3ec337"></a>=&gt; COMMUTATIVITY is mandatory<br  /></li></ul>
+
 </section>
 </section>
 <section>
-<section id="slide-org526c036">
-<h3 id="org526c036">? JSON CRDTs</h3>
+<section id="slide-org5457a18">
+<h3 id="org5457a18">State based</h3>
+<div class="outline-text-3" id="text-org5457a18">
+</div><ul class="org-ul"><li><a id="org721f448"></a><span class="todo TODO">TODO</span> show the 'integer + max' example from page 6 of Shapiro<br  /></li>
+
+<li><a id="org39344a5"></a><span class="todo TODO">TODO</span> On this example illustrate - the merge fct - commutativity - associativity - indempotence<br  /></li></ul>
+
 </section>
 </section>
 <section>
-<section id="slide-org8b9d89f">
-<h2 id="org8b9d89f">REPLIKATIV</h2>
+<section id="slide-org80dcfaa">
+<h3 id="org80dcfaa">More advanced data structure: Set</h3>
+<div class="outline-text-3" id="text-org80dcfaa">
+</div><ul class="org-ul"><li><a id="orge401efb"></a>Naive approach, i.e. like sequential version<br  /><ul class="org-ul"><li><a id="org349d9c6"></a>when lucky:<br  /><div class="figure">
+<p><img src="./img/op-set-naive-ok.png" alt="op-set-naive-ok.png" />
+</p>
+</div></li>
+
+
+<li><a id="orgd029aff"></a>Not lucky:<br  /><div class="figure">
+<p><img src="./img/op-set-naive-notok.png" alt="op-set-naive-notok.png" />
+</p>
+</div></li></ul></li></ul>
+
+
 </section>
 </section>
 <section>
-<section id="slide-org0cfe544">
-<h2 id="org0cfe544">My Contribution</h2>
+<section id="slide-org5c7babf">
+<h3 id="org5c7babf">Observed-Remove Set</h3>
+<div class="outline-text-3" id="text-org5c7babf">
+</div><ul class="org-ul"><li><a id="orgf1133e6"></a>Add a tag on each replica to uniquely identify set elements.<br  /><div class="figure">
+<p><img src="./img/or-set.png" alt="or-set.png" />
+</p>
+</div></li></ul>
+
 </section>
 </section>
 <section>
-<section id="slide-org2f945a7">
-<h2 id="org2f945a7">Demo / Illustration throught the Chat app</h2>
+<section id="slide-orgc7ac355">
+<h3 id="orgc7ac355">Available CRDTs</h3>
+<div class="outline-text-3" id="text-orgc7ac355">
+</div><ul class="org-ul"><li><a id="org3033094"></a>Counter<br  /></li>
+<li><a id="org9b0fab1"></a>Map<br  /></li>
+<li><a id="orgad3ea73"></a>Set<br  /></li>
+<li><a id="orgcefec98"></a>Ordered Set<br  /></li>
+<li><a id="org46620d1"></a>&#x2026;<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-org73675c7">
-<h2 id="org73675c7">Usage in Industry</h2>
-<div class="outline-text-2" id="text-org73675c7">
-</div><ul class="org-ul"><li><a id="orga79ba88"></a>Json crdts in JS by Kleppmann &amp; co<br  /></li>
-<li><a id="orgf5188cc"></a>Riak, Soundcloud, &#x2026;<br  /></li></ul>
+<section id="slide-org6577b78">
+<h3 id="org6577b78">? JSON CRDTs</h3>
 </section>
 </section>
 <section>
-<section id="slide-orgaf8042d">
-<h2 id="orgaf8042d">Advantages of all this</h2>
-<div class="outline-text-2" id="text-orgaf8042d">
-</div><ul class="org-ul"><li><a id="org156f8fb"></a>Less time on server side<br  /></li>
-<li><a id="org2efbffb"></a>&#x2026;<br  /></li></ul>
+<section id="slide-org06c8b84">
+<h2 id="org06c8b84">REPLIKATIV</h2>
 </section>
 </section>
 <section>
-<section id="slide-org919aaae">
-<h2 id="org919aaae">Conclusion</h2>
+<section id="slide-org9283a71">
+<h2 id="org9283a71">My Contribution</h2>
+</section>
+</section>
+<section>
+<section id="slide-org05cdfb4">
+<h2 id="org05cdfb4">Demo / Illustration throught the Chat app</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgae0c96e">
+<h2 id="orgae0c96e">Usage in Industry</h2>
+<div class="outline-text-2" id="text-orgae0c96e">
+</div><ul class="org-ul"><li><a id="orga644e89"></a>Json crdts in JS by Kleppmann &amp; co<br  /></li>
+<li><a id="org7cd33e3"></a>Riak, Soundcloud, &#x2026;<br  /></li></ul>
+</section>
+</section>
+<section>
+<section id="slide-org36845a1">
+<h2 id="org36845a1">Advantages of all this</h2>
+<div class="outline-text-2" id="text-org36845a1">
+</div><ul class="org-ul"><li><a id="org05ef708"></a>Less time on server side<br  /></li>
+<li><a id="org0ed1c70"></a>&#x2026;<br  /></li></ul>
+</section>
+</section>
+<section>
+<section id="slide-orge1b82d1">
+<h2 id="orge1b82d1">Conclusion</h2>
 </section>
 </section>
 </div>
