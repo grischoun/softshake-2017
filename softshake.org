@@ -89,10 +89,15 @@ If we choose to use asynchronous replication, then  => Conflicts
 ****** Fast and Scales
 ****** Main Issue: CONFLICTS
 
-**** Is there a magical solution that would resolve conflicts automatically?
+
+* Magic?
+**** Is there a *magical* solution...
+
+***** which *resolve conflicts* automatically
+***** which is also *fast* and *scales*
 * CRDTs
 *Conflict-free Replicated Data Type*
-
+**** TODO Add picture of Shapiro's paper
 ** Intuition
 **** Whatever the order of the operations, whether there are concurrent operations or not, *eventually* all replicas will converge
 **** Obtained by forcing operations on the data structures to have simple mathematical properties such as commutativity,...
@@ -148,45 +153,69 @@ Operations are propagated to every replicas
 **** If we add multiplication...
 [[./img/op2.png]]
 
-**** (5 - 4 - 3) * 2 - 1 != (5 - 3 - 4 - 1) * 2
+**** (5 - 4 - 3) * 2 - 1 *!=* (5 - 3 - 4 - 1) * 2
 
-**** => COMMUTATIVITY is mandatory
-
+**** *COMMUTATIVITY* is key
 ** COMMENT Issues in Operation based
 [[./img/op3.png]]
 
 **** Must have a semantic of delivering updates only once
 
 **** Must have causal order delivery
-** TODO State based
+** State based
+[[./img/merge.png]]
+**** Locally states are updated by operations /f/, /g/, ...
+**** States are propagated to remote replicas and *merged*
 
-**** TODO show the 'integer + max' example from page 6 of Shapiro
+** State based: Max example
+[[./img/max.png]]
 
-**** TODO On this example illustrate - the merge fct - commutativity - associativity - indempotence
+**** Local operation: 'set a value'
 
-** More advanced data structure: Set
+**** Merge operation: 'max'
+
+**** Convergence when merge function is:
+
+***** Commutative: a + b = b + a
+
+***** Associative: (a + b) + c = a + (b + c)
+
+***** Idempotent:  a + a + a = a
+
+***** COMMENT There exists a partial order on the states
+
+***** COMMENT Merge and update both increase the state along this order
+#+begin_notes
+#+end_notes
+
+**  Set
 
 **** Naive approach, i.e. like sequential version
 
-***** when lucky:
+***** When lucky:
 [[./img/op-set-naive-ok.png]]
 
 
-***** Not lucky:
+***** When Not lucky:
 [[./img/op-set-naive-notok.png]]
 
 
+#+BEGIN_NOTES
+A more advanced data structure
+#+END_NOTES
+
 ** Observed-Remove Set
 
-**** Add a tag on each replica to uniquely identify set elements.
+**** Add a tag on each replica to uniquely identify set elements
   [[./img/or-set.png]]
 
-**** COMMENT or-set favors 'add over 'remove
+**** When concurrent 'add and 'remove, OR-Set favors 'add
 ** Available CRDTs
 **** Counter
 **** Map
 **** Set
 **** Ordered Set
+**** Graph
 **** ...
 ** ? JSON CRDTs
 * REPLIKATIV
