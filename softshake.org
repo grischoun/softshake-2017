@@ -24,6 +24,7 @@
 #+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
 
 
+* COMMENT TODO SPELL CHECK
 * About me
 **** Founder of */Shared Object Sarl/*
 
@@ -40,13 +41,20 @@
 HANDS UP: CRDTs, Clojure, CAP
 #+END_NOTES
 
-* TODO Motivation
+* Motivation
+Compared to current approaches...
+
+Will it be possible to develop distributed applications...
+
+**** which are SIMPLER to build
+
+**** and results in better *scalability, performance, robustness*, ...
 
 **** COMMENT SAY: if there is anything that you can get out of this talk then remember this:
 ***** Soon it is going to be possible to build applications with the following properties....
 **** COMMENT RELIRE: l'intro sur le site de REPLIKATIV pour avoir des idées
 
-****  ????? Comment développer rapidement des applications distribuées (pour le moment des prototypes) avec de jolies propriétés comme:
+**** COMMENT ????? Comment développer rapidement des applications distribuées (pour le moment des prototypes) avec de jolies propriétés comme:
 - liveness
 - ne pas passer trop de temps sur le côté serveur
 - peer-to-peer
@@ -100,7 +108,7 @@ If we choose to use asynchronous replication, then  => Conflicts
 
 [[./img/crdts_shapiro.png]]
 
-** Intuition
+** TODO Intuition
 **** Whatever the order of the operations, whether there are concurrent operations or not, *eventually* all replicas will converge
 **** Obtained by forcing operations on the data structures to have simple mathematical properties such as commutativity,...
 **** COMMENT OLD
@@ -228,14 +236,13 @@ A more advanced data structure
 
 ** Example
 [[./img/ex-json-crdts.png]]
-**** COMMENT TODO Prepare commentaires for this picture
+**** COMMENT TODO Prepare commentaires for the picture
 **** Implementation
 https://github.com/automerge
 
-**   TODO Usage in Industry
-**** Json crdts in JS by Kleppmann & co
-**** Riak, Soundcloud, ...
-
+**  Usage in Industry
+**** Riak, Soundcloud, Cassandra
+**** Programming language: Lasp
 * REPLIKATIV
 
 **** C. Weilbach Motivation
@@ -277,16 +284,17 @@ https://github.com/automerge
 **** Soon: EDN i.e JSON in Clojure
 ** Usage Illustration
 An app that capture task lengths in a project
-**** SERVER
-  #+BEGIN_SRC clojure -n
-  (defn start-server []
-    (let [uri   "ws://127.0.0.1:31778"
-          store (<?? S (new-mem-store))
-          peer  (<?? S (server-peer S store uri))]
-      (run-server #'base-routes {:port 8080})
-      (<?? S (start peer))
-      (<?? S (chan))))
-  #+END_SRC
+**** TODO Add picture of the final app
+** SERVER
+#+BEGIN_SRC clojure -n
+(defn start-server []
+  (let [uri   "ws://127.0.0.1:31778"
+        store (<?? S (new-mem-store))
+        peer  (<?? S (server-peer S store uri))]
+    (run-server #'base-routes {:port 8080})
+    (<?? S (start peer))
+    (<?? S (chan))))
+#+END_SRC
 
 ** Front end
 
@@ -339,7 +347,7 @@ An app that capture task lengths in a project
 #+attr_html: :height 750px
 [[./img/ui-code.png]]
 
-
+** TODO prepare video
 * Conclusion
 
 **** Saw overview of CRDTs and REPLIKATIV
