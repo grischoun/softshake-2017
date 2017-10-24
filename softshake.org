@@ -19,7 +19,7 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 #+OPTIONS: reveal_center:nil
-#+OPTIONS: reveal_height:800
+#+OPTIONS: reveal_height:900
 
 #+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
 
@@ -229,13 +229,32 @@ A more advanced data structure
 **** Riak, Soundcloud, ...
 
 * REPLIKATIV
-**** TODO what is it?
+
+**** Creator's Motivation
+
+***** Clone app state/data like we clone code with git
+
+***** Free data from cloud and vendor lock-in
+
+***** Ultimate goal: statistical analysis
+
+** What is it?
 ***** Develop distributed applications
 ***** Based on replicated data types:  CRDTs
-***** Strong eventual consistency
-***** Can be seen as: distributed database
+***** Can be seen as a distributed database
+***** Clojure(Script)
+
+** Noticeable Features
+
+**** No distinction between client and server
+**** Peer-to-peer
+
+**** Gossip like protocol
+
 ** TODO Available CRDTs
-** TODO My Contribution
+
+**** Soon: JSON (EDN) <- my contribution so far
+
 ** TODO It makes app dev. a lot simpler
 **** TODO Review of code that shows how fast it is to develop an app
 ***** Advantages of all this
@@ -245,3 +264,5 @@ A more advanced data structure
 
 * Conclusion
 * Questions?
+* Extra slides
+* COMMENT TODO spell check
