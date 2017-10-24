@@ -229,7 +229,8 @@ A more advanced data structure
 ** Example
 [[./img/ex-json-crdts.png]]
 **** COMMENT TODO Prepare commentaires for this picture
-
+**** Implementation
+https://github.com/automerge
 
 **   TODO Usage in Industry
 **** Json crdts in JS by Kleppmann & co
@@ -237,7 +238,7 @@ A more advanced data structure
 
 * REPLIKATIV
 
-**** Creator's Motivation
+**** C. Weilbach Motivation
 
 ***** Clone app state/data like we clone code with git
 
@@ -246,7 +247,7 @@ A more advanced data structure
 ***** Ultimate goal: statistical analysis
 
 ** What is it?
-***** Develop distributed applications
+***** For development of distributed applications
 ***** Based on replicated data types:  CRDTs
 ***** Can be seen as a distributed database
 ***** Clojure(Script)
@@ -255,7 +256,7 @@ A more advanced data structure
 
 **** Strong eventual consistency
 ***** No synchronisation
-****** No need to talk to other peers before applying an update
+****** No talk to other peers before updating
 **** Scalability
 **** Availability -> Work offline
 **** No distinction between client and server
@@ -266,11 +267,79 @@ A more advanced data structure
 **** Gossip like protocol
 **** Functional code-base
 
-** TODO Available CRDTs
-
-**** Soon: JSON (EDN) <- my contribution so far
-
+** Architecture
+[[./img/architecture-replikativ.png]]
+** Available CRDTs
+**** map
+**** set
+**** cdvcs
+**** lww
+**** Soon: EDN i.e JSON in Clojure
 ** Usage Illustration
+An app that capture task lengths in a project
+**** SERVER
+  #+BEGIN_SRC clojure -n
+  (defn start-server []
+    (let [uri   "ws://127.0.0.1:31778"
+          store (<?? S (new-mem-store))
+          peer  (<?? S (server-peer S store uri))]
+      (run-server #'base-routes {:port 8080})
+      (<?? S (start peer))
+      (<?? S (chan))))
+  #+END_SRC
+
+** Front end
+
+#+begin_src clojure -n
+(def user "mail:alice@stechuhr.de")
+(def ormap-id #uuid "07f6aae2-2b46-4e44-bfd8-058d13977a8a")
+(def uri "ws://127.0.0.1:31778")
+(defonce val-atom (atom {:captures #{}}))
+
+(defn setup-replikativ []
+  (go-try
+   S
+   (let [store  (<? S (new-mem-store))
+         peer   (<? S (client-peer S store))
+         stage  (<? S (create-stage! user peer))
+         stream (stream-into-identity stage
+                                      [user ormap-id]
+                                      stream-eval-fns
+                                      val-atom)]
+     (<? S (s/create-ormap! stage
+                            :description "captures"
+                            :id ormap-id))
+     (connect! stage uri)
+     {:store  store
+      :stage  stage
+      :stream stream
+      :peer   peer})))
+#+end_src
+
+** Front End
+
+  #+BEGIN_SRC clojure -n
+(def stream-eval-fns
+  {'add (fn [S a new]
+            (swap! a update-in [:captures] conj new)
+            a)
+   'remove (fn [S a new]
+             (swap! a update-in [:captures] disj new)
+             a)})
+
+(defn add-capture! [state capture]
+  (s/assoc! (:stage state)
+            [user ormap-id]
+            (uuid capture)
+            [['add capture]]))
+#+end_src
+
+
+** UI
+#+attr_html: :height 750px
+[[./img/ui-code.png]]
+
+
 * Conclusion
 
 **** Saw overview of CRDTs and REPLIKATIV
