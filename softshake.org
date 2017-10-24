@@ -246,23 +246,38 @@ A more advanced data structure
 
 ** Noticeable Features
 
+**** Strong eventual consistency
+***** No synchronisation
+****** No need to talk to other peers before applying an update
+**** Scalability
+**** Availability -> Work offline
 **** No distinction between client and server
+**** Works in browsers, servers and mobile devices
+**** Works on JS and JVM environments
+**** Updates propagated automatically in both directions
 **** Peer-to-peer
-
 **** Gossip like protocol
+**** Functional code-base
 
 ** TODO Available CRDTs
 
 **** Soon: JSON (EDN) <- my contribution so far
 
-** TODO It makes app dev. a lot simpler
-**** TODO Review of code that shows how fast it is to develop an app
-***** Advantages of all this
-******** Less time on server side
-******** ...
-* Demo / Illustration throught the Chat app
-
+** Usage Illustration
 * Conclusion
+
+**** Saw overview of CRDTs and REPLIKATIV
+
+**** Makes app dev a lot simpler
+***** No need to deal with IO anymore
+****** No client or server networking dev needed
+***** Just work on your local state and the rest is taken care of
+***** No big stack to learn
+***** No app to install
+
+
 * Questions?
 * Extra slides
+** TODO References
+
 * COMMENT TODO spell check
