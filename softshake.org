@@ -156,12 +156,13 @@ Operations are propagated to every replicas
 **** (5 - 4 - 3) * 2 - 1 *!=* (5 - 3 - 4 - 1) * 2
 
 **** *COMMUTATIVITY* is key
-** COMMENT Issues in Operation based
-[[./img/op3.png]]
 
-**** Must have a semantic of delivering updates only once
+#+BEGIN_NOTES
+Other constraints:
+- Must have a semantic of delivering updates only once
+- Must have causal order delivery
+#+END_NOTES
 
-**** Must have causal order delivery
 ** State based
 [[./img/merge.png]]
 **** Locally states are updated by operations /f/, /g/, ...
