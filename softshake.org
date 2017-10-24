@@ -97,7 +97,9 @@ If we choose to use asynchronous replication, then  => Conflicts
 ***** which is also *fast* and *scales*
 * CRDTs
 *Conflict-free Replicated Data Type*
-**** TODO Add picture of Shapiro's paper
+
+[[./img/crdts_shapiro.png]]
+
 ** Intuition
 **** Whatever the order of the operations, whether there are concurrent operations or not, *eventually* all replicas will converge
 **** Obtained by forcing operations on the data structures to have simple mathematical properties such as commutativity,...
@@ -220,10 +222,14 @@ A more advanced data structure
 **** Ordered Set
 **** Graph
 **** ...
-** TODO JSON CRDTs
+**  JSON CRDTs
 **** Based on recent work by Kleppmann & co.
-**** TODO Add a picture of the paper
-**** TODO Add a picture of the main example used in the paper
+[[./img/json-crdts.png]]
+
+** Example
+[[./img/ex-json-crdts.png]]
+**** COMMENT TODO Prepare commentaires for this picture
+
 
 **   TODO Usage in Industry
 **** Json crdts in JS by Kleppmann & co
