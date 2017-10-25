@@ -11,16 +11,11 @@
 #+REVEAL_TRANS: none
 #+REVEAL_PLUGINS: (notes)
 #+REVEAL_HLEVEL: 999
-#+REVEAL_HEAD_PREAMBLE: <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-#+REVEAL_PREAMBLE: <div id="hidden" style="display:none;"> <div id="header"> <div id="header-left"></div> <div id="header-right"></div> <div id="footer-left"><img src="/Users/chrislain/workspace/teaching/assets/images/digicomp_logo.png" height="50" width="250"></div> </div>   </div>
-
-
 
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 #+OPTIONS: reveal_center:nil
 #+OPTIONS: reveal_height:900
-
 #+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
 
 
