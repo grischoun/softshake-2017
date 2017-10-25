@@ -245,7 +245,7 @@ https://github.com/automerge
 **** Programming language: Lasp
 * REPLIKATIV
 
-**** C. Weilbach Motivation
+**** C. Weilbach's Motivation
 
 ***** Clone app state/data like we clone code with git
 
@@ -283,8 +283,8 @@ https://github.com/automerge
 **** lww
 **** Soon: EDN i.e JSON in Clojure
 ** Usage Illustration
-An app that capture task lengths in a project
-**** TODO Add picture of the final app
+An simple app that capture task lengths in a project
+[[./img/demo.png]]
 ** SERVER
 #+BEGIN_SRC clojure -n
 (defn start-server []
@@ -361,6 +361,11 @@ An app that capture task lengths in a project
 
 
 * Questions?
+* Thanks
+**** C. Weilbach
+**** K. Khüne
+**** Martin Kleppmann
+**** Arnout Engelen
 * Extra slides
 ** TODO References
 
