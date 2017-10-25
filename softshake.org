@@ -172,6 +172,8 @@ Pour que ca soit commutatif, faut que:
 (State * op1) * op2 = (State * op2) * op1
 
 e.g.: (10 -1) * 2 != (10 *2) -1
+
+Ce qu'il faut bien voir ici est que ce qu'on appelle operation est op1 et op2, càd -1 et *2 ds l'ex. Les opérations ici ne sont pas * et + mais bien -1 et *2, qui sont aussi différents des op. -23, +34 et /3.
 #+END_NOTES
 
 ** State based
