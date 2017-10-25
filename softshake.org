@@ -159,14 +159,19 @@ Operations are propagated to every replicas
 **** If we add multiplication...
 [[./img/op2.png]]
 
-**** (5 - 4 - 3) * 2 - 1 *!=* (5 - 3 - 4 - 1) * 2
+**** 5 -4 -3 *2 -1 *!=* 5 -3 -4 -1 *2
 
-**** *COMMUTATIVITY* is key
+**** *COMMUTATIVITY*, the order of the operations is key
 
 #+BEGIN_NOTES
 Other constraints:
 - Must have a semantic of delivering updates only once
 - Must have causal order delivery
+
+Pour que ca soit commutatif, faut que:
+(State * op1) * op2 = (State * op2) * op1
+
+e.g.: (10 -1) * 2 != (10 *2) -1
 #+END_NOTES
 
 ** State based
