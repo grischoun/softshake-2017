@@ -33,15 +33,15 @@
 
 
 <section>
-<section id="slide-org86bc27f">
-<h2 id="org86bc27f">About me</h2>
-<div class="outline-text-2" id="text-org86bc27f">
-</div><ul class="org-ul"><li><a id="org2dd77f0"></a>Founder of <b><i>Shared Object Sarl</i></b><br  /></li>
+<section id="slide-org80bdd06">
+<h2 id="org80bdd06">About me</h2>
+<div class="outline-text-2" id="text-org80bdd06">
+</div><ul class="org-ul"><li><a id="orgb61990e"></a>Founder of <b><i>Shared Object Sarl</i></b><br  /></li>
 
-<li><a id="org9125853"></a>Past Adventures<br  /><ul class="org-ul"><li><a id="org9a19c91"></a>Java<br  /><ul class="org-ul"><li><a id="org50d2e78"></a>Compiler and VM implementation, J2EE Applications<br  /></li></ul></li>
+<li><a id="orgb1229de"></a>Past Adventures<br  /><ul class="org-ul"><li><a id="orgfb352cf"></a>Java<br  /><ul class="org-ul"><li><a id="org0337a0e"></a>Compiler and VM implementation, J2EE Applications<br  /></li></ul></li>
 
-<li><a id="org1978780"></a>Rails<br  /></li>
-<li><a id="org2eb903d"></a>Clojure(Script)<br  /><aside class="notes">
+<li><a id="orgdc221c4"></a>Rails<br  /></li>
+<li><a id="org6e58e26"></a>Clojure(Script)<br  /><aside class="notes">
 <p>
 HANDS UP: CRDTs, Clojure, CAP
 </p>
@@ -51,8 +51,8 @@ HANDS UP: CRDTs, Clojure, CAP
 </section>
 </section>
 <section>
-<section id="slide-org171674c">
-<h2 id="org171674c">Motivation</h2>
+<section id="slide-orgce2dd18">
+<h2 id="orgce2dd18">Motivation</h2>
 <p>
 Compared to current approaches&#x2026;
 </p>
@@ -61,15 +61,15 @@ Compared to current approaches&#x2026;
 Will it be possible to develop distributed applications&#x2026;
 </p>
 
-<ul class="org-ul"><li><a id="orgd6dd572"></a>which are SIMPLER to build<br  /></li>
+<ul class="org-ul"><li><a id="orgfbb6b23"></a>which are SIMPLER to build<br  /></li>
 
-<li><a id="org8efb9b6"></a>and results in better <b>scalability, performance, robustness</b>, &#x2026;<br  /></li></ul>
+<li><a id="org76ae1b3"></a>and results in better <b>scalability, performance, robustness</b>, &#x2026;<br  /></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgeae5dd1">
-<h2 id="orgeae5dd1">Distributed Systems</h2>
+<section id="slide-orge903a03">
+<h2 id="orge903a03">Distributed Systems</h2>
 <p>
 ~ Multiple Machines Used For One Purpose
 </p>
@@ -93,51 +93,51 @@ Has taken so much importance today:
 </section>
 </section>
 <section>
-<section id="slide-org5cf26eb">
-<h2 id="org5cf26eb">Replication</h2>
-<div class="outline-text-2" id="text-org5cf26eb">
-</div><ul class="org-ul"><li><a id="orgf7604ba"></a>Goal<br  /><p>
+<section id="slide-org8cf2217">
+<h2 id="org8cf2217">Replication</h2>
+<div class="outline-text-2" id="text-org8cf2217">
+</div><ul class="org-ul"><li><a id="org7f2ed9b"></a>Goal<br  /><p>
 Have the same data on all replicas
 </p></li>
-<li><a id="orgd32bc45"></a>Why<br  /><ul class="org-ul"><li><a id="org41cbce2"></a>Increase <b>Availability</b><br  /><ul>
+<li><a id="orgcff60c8"></a>Why<br  /><ul class="org-ul"><li><a id="org4643fe8"></a>Increase <b>Availability</b><br  /><ul>
 <li>Safer systems</li>
 
 </ul></li>
-<li><a id="org5dcce84"></a>Reduce <b>Latency</b><br  /><ul>
+<li><a id="orgb9cdad9"></a>Reduce <b>Latency</b><br  /><ul>
 <li>Faster systems</li>
 
 </ul></li>
-<li><a id="org067bb9c"></a>Increase <b>Throughput</b><br  /><ul>
+<li><a id="org12af1e3"></a>Increase <b>Throughput</b><br  /><ul>
 <li>By increasing the number of available nodes</li>
 <li>Scalabale systems</li>
 
 </ul></li>
-<li><a id="orgc24cc44"></a>Work <b>Offline</b><br  /></li></ul></li></ul>
+<li><a id="org6c4b64c"></a>Work <b>Offline</b><br  /></li></ul></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-orgfd7dd85">
-<h2 id="orgfd7dd85">Challenges with Replication</h2>
-<div class="outline-text-2" id="text-orgfd7dd85">
-</div><ul class="org-ul"><li><a id="org1cd514c"></a>How to deal with concurrent UPDATES?<br  /><ul class="org-ul"><li><a id="orga099abd"></a>Synchronous / Synchronized<br  /><ul class="org-ul"><li><a id="org16dce0e"></a>Strongly consistent<br  /></li>
-<li><a id="orgff568bb"></a>Main issues: Slow and Does not scale<br  /></li></ul></li>
-<li><a id="org2b614f0"></a>Asynchronous<br  /><ul class="org-ul"><li><a id="orgd4d9749"></a>Fast and Scales<br  /></li>
-<li><a id="org60714fe"></a>Main Issue: CONFLICTS<br  /></li></ul></li></ul></li></ul>
+<section id="slide-orgd6f628d">
+<h2 id="orgd6f628d">Challenges with Replication</h2>
+<div class="outline-text-2" id="text-orgd6f628d">
+</div><ul class="org-ul"><li><a id="orgcfcf107"></a>How to deal with concurrent UPDATES?<br  /><ul class="org-ul"><li><a id="org93d7253"></a>Synchronous / Synchronized<br  /><ul class="org-ul"><li><a id="org08fc6ba"></a>Strongly consistent<br  /></li>
+<li><a id="orgcd4861d"></a>Main issues: Slow and Does not scale<br  /></li></ul></li>
+<li><a id="orgf35eb1a"></a>Asynchronous<br  /><ul class="org-ul"><li><a id="org54fe977"></a>Fast and Scales<br  /></li>
+<li><a id="orge4e846c"></a>Main Issue: CONFLICTS<br  /></li></ul></li></ul></li></ul>
 
 
 </section>
 </section>
 <section>
-<section id="slide-org97a13f4">
-<h2 id="org97a13f4">Magic?</h2>
-<div class="outline-text-2" id="text-org97a13f4">
-</div><ul class="org-ul"><li><a id="org6244713"></a>Is there a <b>magical</b> solution&#x2026;<br  /><ul class="org-ul"><li><a id="org9a2460d"></a>which <b>resolve conflicts</b> automatically<br  /></li>
-<li><a id="orgc1e9765"></a>which is also <b>fast</b> and <b>scales</b><br  /></li></ul></li></ul>
+<section id="slide-orga4f42fe">
+<h2 id="orga4f42fe">Magic?</h2>
+<div class="outline-text-2" id="text-orga4f42fe">
+</div><ul class="org-ul"><li><a id="orgbe55f16"></a>Is there a <b>magical</b> solution&#x2026;<br  /><ul class="org-ul"><li><a id="orgee46caa"></a>which <b>resolve conflicts</b> automatically<br  /></li>
+<li><a id="org114b37d"></a>which is also <b>fast</b> and <b>scales</b><br  /></li></ul></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-orge68dc7f">
-<h2 id="orge68dc7f">CRDTs</h2>
+<section id="slide-orgd72b733">
+<h2 id="orgd72b733">CRDTs</h2>
 <p>
 <b>Conflict-free Replicated Data Type</b>
 </p>
@@ -151,37 +151,37 @@ Have the same data on all replicas
 </section>
 </section>
 <section>
-<section id="slide-org6857ccc">
-<h3 id="org6857ccc"><span class="todo TODO">TODO</span> Intuition</h3>
-<div class="outline-text-3" id="text-org6857ccc">
-</div><ul class="org-ul"><li><a id="org281e9fa"></a>Whatever the order of the operations, whether there are concurrent operations or not, <b>eventually</b> all replicas will converge<br  /></li>
-<li><a id="org83498cd"></a>Obtained by forcing operations on the data structures to have simple mathematical properties such as commutativity,&#x2026;<br  /></li></ul>
+<section id="slide-org2d31846">
+<h3 id="org2d31846"><span class="todo TODO">TODO</span> Intuition</h3>
+<div class="outline-text-3" id="text-org2d31846">
+</div><ul class="org-ul"><li><a id="orgb3ca975"></a>Whatever the order of the operations, whether there are concurrent operations or not, <b>eventually</b> all replicas will converge<br  /></li>
+<li><a id="org2b224cf"></a>Obtained by forcing operations on the data structures to have simple mathematical properties such as commutativity,&#x2026;<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-org6b2902c">
-<h3 id="org6b2902c">Two types of CRDTs</h3>
-<div class="outline-text-3" id="text-org6b2902c">
-</div><ul class="org-ul"><li><a id="org445048c"></a>Operation based<br  /><p>
+<section id="slide-orgd3b03e9">
+<h3 id="orgd3b03e9">Two types of CRDTs</h3>
+<div class="outline-text-3" id="text-orgd3b03e9">
+</div><ul class="org-ul"><li><a id="org1f4b9c3"></a>Operation based<br  /><p>
 Operations are exchanged between nodes
 </p></li>
 
-<li><a id="orge516e83"></a>State based<br  /><p>
+<li><a id="org1de0a78"></a>State based<br  /><p>
 States are exchanged between nodes
 </p></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org11533a4">
-<h3 id="org11533a4">Operation based</h3>
-<div class="outline-text-3" id="text-org11533a4">
-</div><ul class="org-ul"><li><a id="org61938c8"></a>Ex.: COUNTER<br  /><div class="figure">
+<section id="slide-org206bafe">
+<h3 id="org206bafe">Operation based</h3>
+<div class="outline-text-3" id="text-org206bafe">
+</div><ul class="org-ul"><li><a id="org8997dd9"></a>Ex.: COUNTER<br  /><div class="figure">
 <p><img src="./img/op1.png" alt="op1.png" />
 </p>
 </div>
 
-<ul class="org-ul"><li><a id="orgf928408"></a>(5 - 4 - 3) = (5 - 3 - 4)<br  /><aside class="notes">
+<ul class="org-ul"><li><a id="orgc859c51"></a>(5 - 4 - 3) = (5 - 3 - 4)<br  /><aside class="notes">
 <p>
 We have:
 Value , the global state replicated to all nodes
@@ -197,17 +197,17 @@ Operations are propagated to every replicas
 </section>
 </section>
 <section>
-<section id="slide-org9b4d184">
-<h3 id="org9b4d184">Operation based</h3>
-<div class="outline-text-3" id="text-org9b4d184">
-</div><ul class="org-ul"><li><a id="orge4a14e8"></a>If we add multiplication&#x2026;<br  /><div class="figure">
+<section id="slide-orgcf60454">
+<h3 id="orgcf60454">Operation based</h3>
+<div class="outline-text-3" id="text-orgcf60454">
+</div><ul class="org-ul"><li><a id="org3eb2cd7"></a>If we add multiplication&#x2026;<br  /><div class="figure">
 <p><img src="./img/op2.png" alt="op2.png" />
 </p>
 </div></li>
 
-<li><a id="org23a02ac"></a>(5 - 4 - 3) * 2 - 1 <b>!=</b> (5 - 3 - 4 - 1) * 2<br  /></li>
+<li><a id="org0e5300e"></a>(5 - 4 - 3) * 2 - 1 <b>!=</b> (5 - 3 - 4 - 1) * 2<br  /></li>
 
-<li><a id="org9210a8f"></a><b>COMMUTATIVITY</b> is key<br  /><aside class="notes">
+<li><a id="org3f9c2e4"></a><b>COMMUTATIVITY</b> is key<br  /><aside class="notes">
 <p>
 Other constraints:
 </p>
@@ -222,50 +222,50 @@ Other constraints:
 </section>
 </section>
 <section>
-<section id="slide-org49bd824">
-<h3 id="org49bd824">State based</h3>
+<section id="slide-orgf829e2f">
+<h3 id="orgf829e2f">State based</h3>
 
 <div class="figure">
 <p><img src="./img/merge.png" alt="merge.png" />
 </p>
 </div>
-<ul class="org-ul"><li><a id="orgd3e6e57"></a>Locally states are updated by operations <i>f</i>, <i>g</i>, &#x2026;<br  /></li>
-<li><a id="org228e749"></a>States are propagated to remote replicas and <b>merged</b><br  /></li></ul>
+<ul class="org-ul"><li><a id="org01fa439"></a>Locally states are updated by operations <i>f</i>, <i>g</i>, &#x2026;<br  /></li>
+<li><a id="orgdff5696"></a>States are propagated to remote replicas and <b>merged</b><br  /></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgf3a4c2d">
-<h3 id="orgf3a4c2d">State based: Max example</h3>
+<section id="slide-orgb77d2b5">
+<h3 id="orgb77d2b5">State based: Max example</h3>
 
 <div class="figure">
 <p><img src="./img/max.png" alt="max.png" />
 </p>
 </div>
 
-<ul class="org-ul"><li><a id="org08fc331"></a>Local operation: 'set'<br  /></li>
+<ul class="org-ul"><li><a id="org9d8b716"></a>Local operation: 'set'<br  /></li>
 
-<li><a id="orga4d6fd8"></a>Merge operation: 'max'<br  /></li></ul>
-
-</section>
-</section>
-<section>
-<section id="slide-org9540c97">
-<h3 id="org9540c97">State based: convergence</h3>
-<div class="outline-text-3" id="text-org9540c97">
-</div><ul class="org-ul"><li><a id="org4c090d2"></a>Only when <b>merge</b> is:<br  /><ul class="org-ul"><li><a id="org6e36b7c"></a>Commutative: a + b = b + a<br  /></li>
-
-<li><a id="org9d20b7b"></a>Associative: (a + b) + c = a + (b + c)<br  /></li>
-
-<li><a id="org5f47394"></a>Idempotent:  a + a + a = a<br  /></li></ul></li></ul>
+<li><a id="org77964b6"></a>Merge operation: 'max'<br  /></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgbb2b863">
-<h3 id="orgbb2b863">Set</h3>
-<div class="outline-text-3" id="text-orgbb2b863">
-</div><ul class="org-ul"><li><a id="org5f4aab2"></a>Naive approach, i.e. like sequential version<br  /><ul class="org-ul"><li><a id="org25c1754"></a>When lucky:<br  /><div class="figure">
+<section id="slide-org01bb165">
+<h3 id="org01bb165">State based: convergence</h3>
+<div class="outline-text-3" id="text-org01bb165">
+</div><ul class="org-ul"><li><a id="org2e1b37d"></a>Only when <b>merge</b> is:<br  /><ul class="org-ul"><li><a id="orgcf3e935"></a>Commutative: a + b = b + a<br  /></li>
+
+<li><a id="orgd3e1434"></a>Associative: (a + b) + c = a + (b + c)<br  /></li>
+
+<li><a id="orgde3fc9d"></a>Idempotent:  a + a + a = a<br  /></li></ul></li></ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0722dc7">
+<h3 id="org0722dc7">Set</h3>
+<div class="outline-text-3" id="text-org0722dc7">
+</div><ul class="org-ul"><li><a id="org6834f87"></a>Naive approach, i.e. like sequential version<br  /><ul class="org-ul"><li><a id="orgbe71665"></a>When lucky:<br  /><div class="figure">
 <p><img src="./img/op-set-naive-ok.png" alt="op-set-naive-ok.png" />
 </p>
 </div></li></ul></li></ul>
@@ -274,10 +274,10 @@ Other constraints:
 </section>
 </section>
 <section>
-<section id="slide-org63c2804">
-<h3 id="org63c2804">Set</h3>
-<div class="outline-text-3" id="text-org63c2804">
-</div><ul class="org-ul"><li><a id="org867d400"></a>When Not lucky:<br  /><div class="figure">
+<section id="slide-org723c85c">
+<h3 id="org723c85c">Set</h3>
+<div class="outline-text-3" id="text-org723c85c">
+</div><ul class="org-ul"><li><a id="org29bb2d3"></a>When Not lucky:<br  /><div class="figure">
 <p><img src="./img/op-set-naive-notok.png" alt="op-set-naive-notok.png" />
 </p>
 </div>
@@ -293,34 +293,34 @@ A more advanced data structure
 </section>
 </section>
 <section>
-<section id="slide-org7ec3315">
-<h3 id="org7ec3315">Observed-Remove Set</h3>
-<div class="outline-text-3" id="text-org7ec3315">
-</div><ul class="org-ul"><li><a id="org594aab3"></a>Add a tag on each replica to uniquely identify set elements<br  /><div class="figure">
+<section id="slide-orgfe12634">
+<h3 id="orgfe12634">Observed-Remove Set</h3>
+<div class="outline-text-3" id="text-orgfe12634">
+</div><ul class="org-ul"><li><a id="org61746d4"></a>Add a tag on each replica to uniquely identify set elements<br  /><div class="figure">
 <p><img src="./img/or-set.png" alt="or-set.png" />
 </p>
 </div></li>
 
-<li><a id="org963833a"></a>When concurrent 'add and 'remove, OR-Set favors 'add<br  /></li></ul>
+<li><a id="org954ed34"></a>When concurrent 'add and 'remove, OR-Set favors 'add<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-orgd98ddc5">
-<h3 id="orgd98ddc5">Available CRDTs</h3>
-<div class="outline-text-3" id="text-orgd98ddc5">
-</div><ul class="org-ul"><li><a id="orgf6581c1"></a>Counter<br  /></li>
-<li><a id="orgbf06ccd"></a>Map<br  /></li>
-<li><a id="org6ab9c19"></a>Set<br  /></li>
-<li><a id="orgba9ef1f"></a>Ordered Set<br  /></li>
-<li><a id="org6c4339b"></a>Graph<br  /></li>
-<li><a id="orgd701266"></a>&#x2026;<br  /></li></ul>
+<section id="slide-org198d6de">
+<h3 id="org198d6de">Available CRDTs</h3>
+<div class="outline-text-3" id="text-org198d6de">
+</div><ul class="org-ul"><li><a id="org980ae51"></a>Counter<br  /></li>
+<li><a id="org72d3f19"></a>Map<br  /></li>
+<li><a id="org2836a98"></a>Set<br  /></li>
+<li><a id="org06e55b1"></a>Ordered Set<br  /></li>
+<li><a id="orgf26ef47"></a>Graph<br  /></li>
+<li><a id="org9d79662"></a>&#x2026;<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-orgda6f3bc">
-<h3 id="orgda6f3bc">JSON CRDTs</h3>
-<div class="outline-text-3" id="text-orgda6f3bc">
-</div><ul class="org-ul"><li><a id="org5500eef"></a>Based on recent work by Kleppmann &amp; co.<br  /><div class="figure">
+<section id="slide-org65bd554">
+<h3 id="org65bd554">JSON CRDTs</h3>
+<div class="outline-text-3" id="text-org65bd554">
+</div><ul class="org-ul"><li><a id="org96bdc3b"></a>Based on recent work by Kleppmann &amp; co.<br  /><div class="figure">
 <p><img src="./img/json-crdts.png" alt="json-crdts.png" />
 </p>
 </div></li></ul>
@@ -328,70 +328,70 @@ A more advanced data structure
 </section>
 </section>
 <section>
-<section id="slide-orgd7e495a">
-<h3 id="orgd7e495a">Example</h3>
+<section id="slide-org2e36bf5">
+<h3 id="org2e36bf5">Example</h3>
 
 <div class="figure">
 <p><img src="./img/ex-json-crdts.png" alt="ex-json-crdts.png" />
 </p>
 </div>
-<ul class="org-ul"><li><a id="org616323e"></a>Implementation<br  /><p>
+<ul class="org-ul"><li><a id="orgeef22bb"></a>Implementation<br  /><p>
 <a href="https://github.com/automerge">https://github.com/automerge</a>
 </p></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgbd90609">
-<h3 id="orgbd90609">Usage in Industry</h3>
-<div class="outline-text-3" id="text-orgbd90609">
-</div><ul class="org-ul"><li><a id="orgbec30ab"></a>Riak, Soundcloud, Cassandra<br  /></li>
-<li><a id="orgee89458"></a>Programming language: Lasp<br  /></li></ul>
+<section id="slide-orgac5605d">
+<h3 id="orgac5605d">Usage in Industry</h3>
+<div class="outline-text-3" id="text-orgac5605d">
+</div><ul class="org-ul"><li><a id="org27d948e"></a>Riak, Soundcloud, Cassandra<br  /></li>
+<li><a id="orgbc7191f"></a>Programming language: Lasp<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-orga887500">
-<h2 id="orga887500">REPLIKATIV</h2>
-<div class="outline-text-2" id="text-orga887500">
-</div><ul class="org-ul"><li><a id="org6526562"></a>C. Weilbach's Motivation<br  /><ul class="org-ul"><li><a id="org41037bf"></a>Clone app state/data like we clone code with git<br  /></li>
+<section id="slide-org5b3c893">
+<h2 id="org5b3c893">REPLIKATIV</h2>
+<div class="outline-text-2" id="text-org5b3c893">
+</div><ul class="org-ul"><li><a id="orge067b68"></a>C. Weilbach's Motivation<br  /><ul class="org-ul"><li><a id="org09e0c64"></a>Clone app state/data like we clone code with git<br  /></li>
 
-<li><a id="org94c0fca"></a>Free data from cloud and vendor lock-in<br  /></li>
+<li><a id="org27b8b28"></a>Free data from cloud and vendor lock-in<br  /></li>
 
-<li><a id="org959ae82"></a>Ultimate goal: statistical analysis<br  /></li></ul></li>
-
-</section>
-</section>
-<section>
-<section id="slide-org21f8a34">
-<h3 id="org21f8a34">What is it?</h3>
-<div class="outline-text-3" id="text-org21f8a34">
-</div><ul class="org-ul"><li><a id="orgddd0b63"></a>For development of distributed applications<br  /></li>
-<li><a id="orgd3b1e24"></a>Based on replicated data types:  CRDTs<br  /></li>
-<li><a id="org0ff7583"></a>Can be seen as a distributed database<br  /></li>
-<li><a id="orgd735f99"></a>Clojure(Script)<br  /></li></ul>
+<li><a id="org3e333e2"></a>Ultimate goal: statistical analysis<br  /></li></ul></li>
 
 </section>
 </section>
 <section>
-<section id="slide-org1de9811">
-<h3 id="org1de9811">Noticeable Features</h3>
-<div class="outline-text-3" id="text-org1de9811">
-</div><ul class="org-ul"><li><a id="org21aba31"></a>Strong eventual consistency<br  /><ul class="org-ul"><li><a id="orgd8c1e85"></a>No synchronisation<br  /><ul class="org-ul"><li><a id="orge53c226"></a>No talk to other peers before updating<br  /></li></ul></li></ul></li>
-<li><a id="orge6f49db"></a>Scalability<br  /></li>
-<li><a id="orgff94000"></a>Availability -&gt; Work offline<br  /></li>
-<li><a id="org0f81348"></a>No distinction between client and server<br  /></li>
-<li><a id="orgf9d02d3"></a>Works in browsers, servers and mobile devices<br  /></li>
-<li><a id="orgf0d2933"></a>Works on JS and JVM environments<br  /></li>
-<li><a id="org388115c"></a>Updates propagated automatically in both directions<br  /></li>
-<li><a id="orgb99f0df"></a>Peer-to-peer<br  /></li>
-<li><a id="org6115d1f"></a>Gossip like protocol<br  /></li>
-<li><a id="orgaa1a6e4"></a>Functional code-base<br  /></li></ul>
+<section id="slide-org6b526b8">
+<h3 id="org6b526b8">What is it?</h3>
+<div class="outline-text-3" id="text-org6b526b8">
+</div><ul class="org-ul"><li><a id="org65d480d"></a>For development of distributed applications<br  /></li>
+<li><a id="org9036ff6"></a>Based on replicated data types:  CRDTs<br  /></li>
+<li><a id="orga324584"></a>Can be seen as a distributed database<br  /></li>
+<li><a id="orgdced41d"></a>Clojure(Script)<br  /></li></ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org14bbd80">
-<h3 id="org14bbd80">Architecture</h3>
+<section id="slide-orgd9d6a33">
+<h3 id="orgd9d6a33">Noticeable Features</h3>
+<div class="outline-text-3" id="text-orgd9d6a33">
+</div><ul class="org-ul"><li><a id="org388f960"></a>Strong eventual consistency<br  /><ul class="org-ul"><li><a id="orgaaa0773"></a>No synchronisation<br  /><ul class="org-ul"><li><a id="orge427728"></a>No talk to other peers before updating<br  /></li></ul></li></ul></li>
+<li><a id="orgb62d223"></a>Scalability<br  /></li>
+<li><a id="org8ea64ed"></a>Availability -&gt; Work offline<br  /></li>
+<li><a id="org8efa4c0"></a>No distinction between client and server<br  /></li>
+<li><a id="org60bbbc1"></a>Works in browsers, servers and mobile devices<br  /></li>
+<li><a id="org489a42a"></a>Works on JS and JVM environments<br  /></li>
+<li><a id="orgc7ebe01"></a>Updates propagated automatically in both directions<br  /></li>
+<li><a id="orgbbf94e8"></a>Peer-to-peer<br  /></li>
+<li><a id="org1fb36aa"></a>Gossip like protocol<br  /></li>
+<li><a id="orgd3d2674"></a>Functional code-base<br  /></li></ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1260e7b">
+<h3 id="org1260e7b">Architecture</h3>
 
 <div class="figure">
 <p><img src="./img/architecture-replikativ.png" alt="architecture-replikativ.png" />
@@ -400,19 +400,19 @@ A more advanced data structure
 </section>
 </section>
 <section>
-<section id="slide-org0f3662c">
-<h3 id="org0f3662c">Available CRDTs</h3>
-<div class="outline-text-3" id="text-org0f3662c">
-</div><ul class="org-ul"><li><a id="orgca21314"></a>map<br  /></li>
-<li><a id="orgc69125c"></a>set<br  /></li>
-<li><a id="orga9afa5a"></a>cdvcs<br  /></li>
-<li><a id="orgd7bb214"></a>lww<br  /></li>
-<li><a id="orgc977355"></a>Soon: EDN i.e JSON in Clojure<br  /></li></ul>
+<section id="slide-org3739595">
+<h3 id="org3739595">Available CRDTs</h3>
+<div class="outline-text-3" id="text-org3739595">
+</div><ul class="org-ul"><li><a id="org02c7503"></a>map<br  /></li>
+<li><a id="org3dfbd27"></a>set<br  /></li>
+<li><a id="orgfa52cb2"></a>cdvcs<br  /></li>
+<li><a id="org510f0ac"></a>lww<br  /></li>
+<li><a id="org0a01483"></a>Soon: EDN i.e JSON in Clojure<br  /></li></ul>
 </section>
 </section>
 <section>
-<section id="slide-org8bb4daf">
-<h3 id="org8bb4daf">Usage Illustration</h3>
+<section id="slide-org2993c35">
+<h3 id="org2993c35">Usage Illustration</h3>
 <p>
 An simple app that capture task lengths in a project
 <img src="./img/demo.png" alt="demo.png" />
@@ -420,8 +420,8 @@ An simple app that capture task lengths in a project
 </section>
 </section>
 <section>
-<section id="slide-org2707bcb">
-<h3 id="org2707bcb">SERVER</h3>
+<section id="slide-org113dbda">
+<h3 id="org113dbda">SERVER</h3>
 <div class="org-src-container">
 
 <pre  class="src src-clojure"><span class="linenr">1: </span>(<span style="color: #f0dfaf; font-weight: bold;">defn</span> <span style="color: #8cd0d3;">start-server</span> []
@@ -437,8 +437,8 @@ An simple app that capture task lengths in a project
 </section>
 </section>
 <section>
-<section id="slide-orgb9bd9d5">
-<h3 id="orgb9bd9d5">Front end</h3>
+<section id="slide-org076602e">
+<h3 id="org076602e">Front end</h3>
 <div class="org-src-container">
 
 <pre  class="src src-clojure"><span class="linenr"> 1: </span>(<span style="color: #f0dfaf; font-weight: bold;">def</span> <span style="color: #dfaf8f;">user</span> <span style="color: #8fb28f;">"mail:alice@stechuhr.de"</span>)
@@ -470,8 +470,8 @@ An simple app that capture task lengths in a project
 </section>
 </section>
 <section>
-<section id="slide-orge3b0ba9">
-<h3 id="orge3b0ba9">Front End</h3>
+<section id="slide-orgbb47f50">
+<h3 id="orgbb47f50">Front End</h3>
 <div class="org-src-container">
 
 <pre  class="src src-clojure"><span class="linenr"> 1: </span>(<span style="color: #f0dfaf; font-weight: bold;">def</span> <span style="color: #dfaf8f;">stream-eval-fns</span>
@@ -494,8 +494,8 @@ An simple app that capture task lengths in a project
 </section>
 </section>
 <section>
-<section id="slide-org4fdf4a0">
-<h3 id="org4fdf4a0">UI</h3>
+<section id="slide-orgb40759d">
+<h3 id="orgb40759d">UI</h3>
 
 <div class="figure">
 <p><img src="./img/ui-code.png" alt="ui-code.png" height="750px" />
@@ -505,48 +505,59 @@ An simple app that capture task lengths in a project
 </section>
 </section>
 <section>
-<section id="slide-org43ff5c5">
-<h3 id="org43ff5c5"><span class="todo TODO">TODO</span> prepare video</h3>
-</section>
-</section>
-<section>
-<section id="slide-orgae06373">
-<h2 id="orgae06373">Conclusion</h2>
-<div class="outline-text-2" id="text-orgae06373">
-</div><ul class="org-ul"><li><a id="org5fd02c2"></a>Saw overview of CRDTs and REPLIKATIV<br  /></li>
+<section id="slide-org5cb8dbb">
+<h3 id="org5cb8dbb">Demo</h3>
+<div class="notes">
+<p>
+video: <a href="http://replikativ.io/doc/applications.html">http://replikativ.io/doc/applications.html</a> or <a href="https://www.youtube.com/watch?v=LW8v6Cr9BcM&amp;feature=youtu.be">https://www.youtube.com/watch?v=LW8v6Cr9BcM&amp;feature=youtu.be</a>
+</p>
 
-<li><a id="org26761c0"></a>Makes app dev a lot simpler<br  /><ul class="org-ul"><li><a id="org57962df"></a>No need to deal with IO anymore<br  /><ul class="org-ul"><li><a id="org2db6646"></a>No client or server networking dev needed<br  /></li></ul></li>
-<li><a id="org963cfba"></a>Just work on your local state and the rest is taken care of<br  /></li>
-<li><a id="orgf5bb14f"></a>No big stack to learn<br  /></li>
-<li><a id="org778b2d6"></a>No app to install<br  /></li></ul></li></ul>
+<p>
+43'36''
+</p>
 
+</div>
 
 </section>
 </section>
 <section>
-<section id="slide-org9a9bdb2">
-<h2 id="org9a9bdb2">Questions?</h2>
+<section id="slide-orgb71b21d">
+<h2 id="orgb71b21d">Conclusion</h2>
+<div class="outline-text-2" id="text-orgb71b21d">
+</div><ul class="org-ul"><li><a id="orgc960947"></a>Saw overview of CRDTs and REPLIKATIV<br  /></li>
+
+<li><a id="org8bb0f07"></a>Makes app dev a lot simpler<br  /><ul class="org-ul"><li><a id="orgc766edd"></a>No need to deal with IO anymore<br  /><ul class="org-ul"><li><a id="org00b4bb0"></a>No client or server networking dev needed<br  /></li></ul></li>
+<li><a id="orgd72d4af"></a>Just work on your local state and the rest is taken care of<br  /></li>
+<li><a id="org790ffbd"></a>No big stack to learn<br  /></li>
+<li><a id="org3aa1f8d"></a>No app to install<br  /></li></ul></li></ul>
+
+
 </section>
 </section>
 <section>
-<section id="slide-org55a1f9c">
-<h2 id="org55a1f9c">Thanks</h2>
-<div class="outline-text-2" id="text-org55a1f9c">
-</div><ul class="org-ul"><li><a id="orgedd24a8"></a>C. Weilbach<br  /></li>
-<li><a id="orgc3b12f5"></a>K. Khüne<br  /></li>
-<li><a id="org168ecf5"></a>Martin Kleppmann<br  /></li>
-<li><a id="org0e2d1bb"></a>Arnout Engelen<br  /></li></ul>
+<section id="slide-org14dc167">
+<h2 id="org14dc167">Questions?</h2>
 </section>
 </section>
 <section>
-<section id="slide-org08964fe">
-<h2 id="org08964fe">Extra slides</h2>
-<div class="outline-text-2" id="text-org08964fe">
+<section id="slide-org5d99d85">
+<h2 id="org5d99d85">Thanks</h2>
+<div class="outline-text-2" id="text-org5d99d85">
+</div><ul class="org-ul"><li><a id="org97da440"></a>C. Weilbach<br  /></li>
+<li><a id="org5f360aa"></a>K. Khüne<br  /></li>
+<li><a id="orgadaeb80"></a>Martin Kleppmann<br  /></li>
+<li><a id="org2aea64d"></a>Arnout Engelen<br  /></li></ul>
+</section>
+</section>
+<section>
+<section id="slide-orgb9c71b5">
+<h2 id="orgb9c71b5">Extra slides</h2>
+<div class="outline-text-2" id="text-orgb9c71b5">
 </div></section>
 </section>
 <section>
-<section id="slide-org94310fa">
-<h3 id="org94310fa"><span class="todo TODO">TODO</span> References</h3>
+<section id="slide-orgecde924">
+<h3 id="orgecde924"><span class="todo TODO">TODO</span> References</h3>
 </section>
 </section>
 </div>

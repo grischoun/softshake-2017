@@ -347,7 +347,14 @@ An simple app that capture task lengths in a project
 #+attr_html: :height 750px
 [[./img/ui-code.png]]
 
-** TODO prepare video
+** Demo
+#+begin_notes
+video: http://replikativ.io/doc/applications.html or https://www.youtube.com/watch?v=LW8v6Cr9BcM&feature=youtu.be
+
+43'36''
+
+#+end_notes
+
 * Conclusion
 
 **** Saw overview of CRDTs and REPLIKATIV
