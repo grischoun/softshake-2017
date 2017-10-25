@@ -24,7 +24,6 @@
 #+OPTIONS: ^:nil                       ## Pour ne pas le laisser interpréter les _
 
 
-* COMMENT TODO SPELL CHECK
 * About me
 **** Founder of */Shared Object Sarl/*
 
@@ -83,11 +82,11 @@ Have the same data on all replicas
 - Scalable systems
 ***** Work *Offline*
 * Challenges with Replication
-**** COMMENT As soon as there are updates problems arises. If we choose to synchronize the replication (i.e. wait for all the replicas to confirm that replication went well) it is going to be very slow.
-If we choose to use asynchronous replication, then  => Conflicts
-
+#+attr_html: :height 250px
+[[./img/distributed.png]]
 
 **** How to deal with concurrent UPDATES?
+
 ***** Synchronous / Synchronized
 ****** COMMENT Wait for a confirmation from other replicas before acknowledging the write to the local client
 ****** Strongly consistent
@@ -108,9 +107,13 @@ If we choose to use asynchronous replication, then  => Conflicts
 
 [[./img/crdts_shapiro.png]]
 
-** TODO Intuition
+** Intuition
 **** Whatever the order of the operations, whether there are concurrent operations or not, *eventually* all replicas will converge
-**** Obtained by forcing operations on the data structures to have simple mathematical properties such as commutativity,...
+**** Can be seens as either:
+***** Conflicts are automatically resolved
+***** Or by design there is no conflicts
+**** Key: force the data structures to have special mathematical properties
+
 **** COMMENT OLD
 Thanks to mathematical properties => All replicas will *eventually* converge
 **** COMMENT OLD
