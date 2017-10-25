@@ -7,7 +7,7 @@
 #+Author: Chrislain Razafimahefa
 #+Email: razafima@gmail.com
 
-#+REVEAL_ROOT: file:./reveal.js
+#+REVEAL_ROOT: ./reveal.js
 #+REVEAL_TRANS: none
 #+REVEAL_PLUGINS: (notes)
 #+REVEAL_HLEVEL: 999
