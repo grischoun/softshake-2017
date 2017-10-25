@@ -28,13 +28,9 @@
 **** Founder of */Shared Object Sarl/*
 
 **** Past Adventures
-***** Java
-****** Compiler and VM implementation, J2EE Applications
+***** Java, Rails, Clojure(Script)
 
-***** Rails
-***** Clojure(Script)
-
-
+***** Web app, Distributed systems, J2EE Applications, Compiler and VM implementation
 
 #+BEGIN_NOTES
 HANDS UP: CRDTs, Clojure, CAP
@@ -108,11 +104,13 @@ Have the same data on all replicas
 [[./img/crdts_shapiro.png]]
 
 ** Intuition
-**** Whatever the order of the operations, whether there are concurrent operations or not, *eventually* all replicas will converge
+**** Whatever the order of the operations
+***** Whether there are concurrent operations or not
+***** *Eventually* all replicas will converge
 **** Can be seens as either:
 ***** Conflicts are automatically resolved
 ***** Or by design there is no conflicts
-**** Key: force the data structures to have special mathematical properties
+**** Key: mathematical properties imposed on data structures
 
 **** COMMENT OLD
 Thanks to mathematical properties => All replicas will *eventually* converge
@@ -250,11 +248,12 @@ https://github.com/automerge
 
 **** C. Weilbach's Motivation
 
-***** Clone app state/data like we clone code with git
-
 ***** Free data from cloud and vendor lock-in
 
 ***** Ultimate goal: statistical analysis
+
+***** Clone app state/data like we clone code with git
+
 
 ** What is it?
 ***** For development of distributed applications
@@ -282,8 +281,9 @@ https://github.com/automerge
 ** Available CRDTs
 **** map
 **** set
-**** cdvcs
 **** lww
+**** cdvcs
+
 **** Soon: EDN i.e JSON in Clojure
 ** Usage Illustration
 An simple app that capture task lengths in a project
@@ -351,12 +351,20 @@ An simple app that capture task lengths in a project
 [[./img/ui-code.png]]
 
 ** Demo
-#+begin_notes
+
+#+BEGIN_NOTES
+live demo:
+
+cd /Users/chrislain/workspace/stechuhr
+
+lein run
+
+in chrome: http://localhost:8080/index.html
+
 video: http://replikativ.io/doc/applications.html or https://www.youtube.com/watch?v=LW8v6Cr9BcM&feature=youtu.be
 
 43'36''
-
-#+end_notes
+#+END_NOTES
 
 * Conclusion
 
