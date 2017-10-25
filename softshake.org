@@ -369,14 +369,12 @@ video: http://replikativ.io/doc/applications.html or https://www.youtube.com/wat
 ***** No big stack to learn
 ***** No app to install
 
-
-* Questions?
 * Thanks
 **** C. Weilbach
 **** K. Khüne
 **** Martin Kleppmann
 **** Arnout Engelen
-* Extra slides
-** TODO References
+* Questions?
 
-* COMMENT TODO spell check
+* COMMENT Extra slides
+** COMMENT TODO References
