@@ -384,5 +384,7 @@ video: http://replikativ.io/doc/applications.html or https://www.youtube.com/wat
 **** Arnout Engelen
 * Questions?
 
-* COMMENT Extra slides
+* Extra slides
+** Join Semi-Lattice
+[[./img/lattice.png]]
 ** COMMENT TODO References
