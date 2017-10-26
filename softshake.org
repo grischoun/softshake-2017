@@ -395,11 +395,12 @@ video: http://replikativ.io/doc/applications.html or https://www.youtube.com/wat
 ***** No big stack to learn
 ***** No app to install
 
-* Thanks
+* Thank You
 **** C. Weilbach
+**** M. Shapiro
 **** K. Khüne
-**** Martin Kleppmann
-**** Arnout Engelen
+**** M. Kleppmann
+**** A. Engelen
 * Questions?
 
 * Extra slides
