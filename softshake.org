@@ -104,7 +104,7 @@ Have the same data on all replicas
 ***** *Eventually* all replicas will converge
 **** Can be seens as either:
 ***** Conflicts are automatically resolved
-***** Or by design there is no conflicts
+***** Or by design there are no conflicts
 **** Key: mathematical properties imposed on data structures
 
 **** COMMENT OLD
@@ -156,37 +156,46 @@ Operations are propagated to every replicas
 ** Operation based
 
 
-**** If we add multiplication...
+**** Suppose we add multiplication...
 [[./img/op2.png]]
 
-**** 5 -4 -3 *2 -1 *!=* 5 -3 -4 -1 *2
+**** 5 -4 -3 *2 -1 != 5 -3 -4 -1 *2
 
-**** *COMMUTATIVITY*, the order of the operations is key
+**** *COMMUTATIVITY*
 
-#+BEGIN_NOTES
-Other constraints:
-- Must have a semantic of delivering updates only once
-- Must have causal order delivery
+***** The operations *order* is key
 
-Pour que ca soit commutatif, faut que:
-(State * op1) * op2 = (State * op2) * op1
+ #+BEGIN_NOTES
+ Other constraints:
+ - Must have a semantic of delivering updates only once
+ - Must have causal order delivery
 
-e.g.: (10 -1) * 2 != (10 *2) -1
+ Pour que ca soit commutatif, faut que:
+ (State * op1) * op2 = (State * op2) * op1
 
-Ce qu'il faut bien voir ici est que ce qu'on appelle operation est op1 et op2, càd -1 et *2 ds l'ex. Les opérations ici ne sont pas * et + mais bien -1 et *2, qui sont aussi différents des op. -23, +34 et /3.
-#+END_NOTES
+ e.g.: (10 -1) * 2 != (10 *2) -1
+
+ Ce qu'il faut bien voir ici est que ce qu'on appelle operation est op1 et op2, càd -1 et *2 ds l'ex. Les opérations ici ne sont pas * et + mais bien -1 et *2, qui sont aussi différents des op. -23, +34 et /3.
+ #+END_NOTES
 
 ** State based
-[[./img/merge.png]]
-**** Locally states are updated by operations /f/, /g/, ...
-**** States are propagated to remote replicas and *merged*
+   [[./img/merge.png]]
+**** Operations are applied locally
+**** *States* are propagated and *merged*
 
 ** State based: Max example
-[[./img/max.png]]
+   [[./img/max.png]]
 
+**** Invariant: 'max'
 **** Local operation: 'set'
 
 **** Merge operation: 'max'
+
+#+BEGIN_NOTES
+Important: l'illustration du merge
+
+#+END_NOTES
+
 
 ** State based: convergence
 **** Only when *merge* is:
@@ -197,33 +206,40 @@ Ce qu'il faut bien voir ici est que ce qu'on appelle operation est op1 et op2, c
 
 ***** Idempotent:  a + a + a = a
 
-***** COMMENT There exists a partial order on the states
 
-***** COMMENT Merge and update both increase the state along this order
-#+begin_notes
-#+end_notes
+#+BEGIN_NOTES
+Other required condition:
+- There exists a partial order on the states
 
+- Merge and update both increase the state along this order
+- I.e. join semilattice
+
+Insights:
+- Commutativity: states can arrive in any order
+- Associativity: states arrives in the *same* order but merge done in any order
+- Idempotent: same state can arrive again and again
+#+END_NOTES
 **  Set
 
 **** Naive approach, i.e. like sequential version
 
 ***** When lucky:
-[[./img/op-set-naive-ok.png]]
+      [[./img/op-set-naive-ok.png]]
 
 
 ** Set
 ***** When Not lucky:
-[[./img/op-set-naive-notok.png]]
+      [[./img/op-set-naive-notok.png]]
 
 
-#+BEGIN_NOTES
-A more advanced data structure
-#+END_NOTES
+      #+BEGIN_NOTES
+      A more advanced data structure
+      #+END_NOTES
 
 ** Observed-Remove Set
 
 **** Add a tag on each replica to uniquely identify set elements
-  [[./img/or-set.png]]
+     [[./img/or-set.png]]
 
 **** When concurrent 'add and 'remove, OR-Set favors 'add
 ** Available CRDTs
@@ -235,13 +251,13 @@ A more advanced data structure
 **** ...
 **  JSON CRDTs
 **** Based on recent work by Kleppmann & co.
-[[./img/json-crdts.png]]
+     [[./img/json-crdts.png]]
 
 ** Example
-[[./img/ex-json-crdts.png]]
+   [[./img/ex-json-crdts.png]]
 **** COMMENT TODO Prepare commentaires for the picture
 **** Implementation
-https://github.com/automerge
+     https://github.com/automerge
 
 **  Usage in Industry
 **** Riak, Soundcloud, Cassandra
@@ -387,6 +403,9 @@ video: http://replikativ.io/doc/applications.html or https://www.youtube.com/wat
 * Questions?
 
 * Extra slides
+
+** Json: convergence but...
+[[./img/json-wrong.png]]
 ** Join Semi-Lattice
 [[./img/lattice.png]]
 ** COMMENT TODO References
