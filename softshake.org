@@ -402,11 +402,3 @@ video: http://replikativ.io/doc/applications.html or https://www.youtube.com/wat
 **** M. Kleppmann & Co.
 **** A. Engelen
 * Questions?
-
-* Extra slides
-
-** Json: convergence but...
-[[./img/json-wrong.png]]
-** Join Semi-Lattice
-[[./img/lattice.png]]
-** COMMENT TODO References
