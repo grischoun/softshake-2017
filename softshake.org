@@ -260,8 +260,8 @@ Insights:
      https://github.com/automerge
 
 **  Usage in Industry
-**** Riak, Soundcloud, Cassandra
-**** Programming language: Lasp
+**** Riak, Soundcloud, Cassandra, ...
+
 * REPLIKATIV
 
 **** C. Weilbach's Motivation
