@@ -11,6 +11,7 @@
 #+REVEAL_TRANS: none
 #+REVEAL_PLUGINS: (notes)
 #+REVEAL_HLEVEL: 999
+#+REVEAL_THEME: white
 
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
